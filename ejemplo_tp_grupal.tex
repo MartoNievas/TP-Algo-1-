@@ -21,19 +21,59 @@
 \begin{document}
 
 \maketitle
+\section {Ejercicios}
 \subsection{Especficiacion}
 
-\indent
-\textbf{1. grandesCiudades}: A partir de una lista de ciudades, devuelve aquellas que tienen más de 50.000 habitantes.
-
-\indent
-proc grandesCiudades (in ciudades: seq(Ciudad)) : seq(Ciudad)
-\vspace {0.3cm}
+\begin{quote}
+\vspace{0.2cm}
+\textbf{1. grandesCiudades} A partir de una lista de ciudades, devuelve aquellas que tienen m´as de 50.000 habitantes.
+\textbf {proc  grandesCiudades} (in ciudades: seq⟨Ciudad⟩) : seq⟨Ciudad⟩
+\vspace{0.2cm}
 \\
-\indent
-\textbf{Predicados:} 
-\vspace {0.3cm}
+\vspace{0.2cm}
+\textbf{2. sumaDeHabitantes:} Por cuestiones de planificaci´on urbana, las ciudades registran sus habitantes mayores de edad
+por un lado y menores de edad por el otro. Dadas dos listas de ciudades del mismo largo con los mismos nombres, una
+con sus habitantes mayores y otra con sus habitantes menores, este procedimiento debe devolver una lista de ciudades
+con la cantidad total de sus habitantes.
+\\
+\vspace{0.2cm}
+\textbf {proc sumaDeHabitantes} (in menoresDeCiudades: seq⟨Ciudad⟩, in mayoresDeCiudades: seq⟨Ciudad⟩) : seq⟨Ciudad⟩
+\\
+\vspace{0.2cm}
+\textbf{3. hayCamino:} Un mapa de ciudades est´a conformada por ciudades y caminos que unen a algunas de ellas. A partir de
+este mapa, podemos definir las distancias entre ciudades como una matriz donde cada celda i, j representa la distancia
+entre la ciudad i y la ciudad j (Fig. 2). Una distancia de 0 equivale a no haber camino entre i y j. Notar que la distancia
+de una ciudad hacia s´ı misma es cero y la distancia entre A y B es la misma que entre B y A.
+\vspace{0.2cm}
+\\ 
+\vspace{0.2cm}
+\textbf{proc hayCamino} o (in distancias: seq⟨seq⟨\ent⟩⟩, in desde: \ent, in hasta: \ent) : Bool
+\vspace{0.2cm}
+\\
+\vspace{0.2cm}
+\textbf{4. cantidadCaminosNSaltos:} Dentro del contexto de redes informaticas, nos interesa contar la cantidad de “saltos”
+que realizan los paquetes de datos, donde un salto se define como pasar por un nodo.
+As´ı como definimos la matriz de distancias, podemos definir la matriz de conexi´on entre nodos, donde cada celda i, j
+tiene un 1 si hay un unico camino a un salto de distancia entre el nodo i y el nodo j, y un 0 en caso contrario. En este
+caso, se trata de una matriz de conexi´on de orden 1, ya que indica cu´ales pares de nodos poseen 1 camino entre ellos a
+1 salto de distancia.
+Dada la matriz de conexion de orden 1, este procedimineto debe obtener aquella de orden n que indica cu´antos caminos
+de n saltos hay entre los distintos nodos. Notar que la multiplicaci´on de una matriz de conexi´on de orden 1 consigo
+misma nos da la matriz de conexi´on de orden 2, y ası sucesivamente.4
+\\
+\vspace{0.2cm}
+\textbf{proc cantidadNSaltos } s (inout conexi´on: seq⟨seq⟨\ent⟩⟩, in n: \ent)
+\vspace{0.2cm}
+\\
+\vspace{0.2cm}
+\textbf{5. caminoMınimo:} caminoMınimo: Dada una matriz de distancias, una ciudad de origen y una ciudad de destino, este procedimiento
+debe devolver la lista de ciudades que conforman el camino mas corto entre ambas. En caso de no existir un camino,
+se debe devolver una lista vacıa.
+\\
+\textbf{proc caminoMinimo} (in origen: \ent, in destino: \ent, in distancias: seq⟨seq⟨\ent⟩⟩) : seq⟨\ent⟩
+\end {quote}
 \subsection{WP (Weakness Precondiction)}
+
 
 
 
