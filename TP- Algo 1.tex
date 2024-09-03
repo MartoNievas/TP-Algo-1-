@@ -31,7 +31,7 @@
 \vspace{0.2cm}
 \\
 \vspace{0.2cm}
-\textbf{2. sumaDeHabitantes:} Por cuestiones de planificaci´on urbana, las ciudades registran sus habitantes mayores de edad
+\textbf{2. sumaDeHabitantes:} Por cuestiones de planificacion urbana, las ciudades registran sus habitantes mayores de edad
 por un lado y menores de edad por el otro. Dadas dos listas de ciudades del mismo largo con los mismos nombres, una
 con sus habitantes mayores y otra con sus habitantes menores, este procedimiento debe devolver una lista de ciudades
 con la cantidad total de sus habitantes.
@@ -40,26 +40,26 @@ con la cantidad total de sus habitantes.
 \textbf {proc sumaDeHabitantes} (in menoresDeCiudades: seq⟨Ciudad⟩, in mayoresDeCiudades: seq⟨Ciudad⟩) : seq⟨Ciudad⟩
 \\
 \vspace{0.2cm}
-\textbf{3. hayCamino:} Un mapa de ciudades est´a conformada por ciudades y caminos que unen a algunas de ellas. A partir de
+\textbf{3. hayCamino:} Un mapa de ciudades esta conformada por ciudades y caminos que unen a algunas de ellas. A partir de
 este mapa, podemos definir las distancias entre ciudades como una matriz donde cada celda i, j representa la distancia
 entre la ciudad i y la ciudad j (Fig. 2). Una distancia de 0 equivale a no haber camino entre i y j. Notar que la distancia
 de una ciudad hacia s´ı misma es cero y la distancia entre A y B es la misma que entre B y A.
 \vspace{0.2cm}
 \\ 
 \vspace{0.2cm}
-\textbf{proc hayCamino} o (in distancias: seq⟨seq⟨\ent⟩⟩, in desde: \ent, in hasta: \ent) : Bool
+\textbf{proc hayCamino} o (in distancias: seq⟨seq⟨\ent⟩⟩, in desde: \ent, in hasta: \ent) : \bool
 \vspace{0.2cm}
 \\
 \vspace{0.2cm}
 \textbf{4. cantidadCaminosNSaltos:} Dentro del contexto de redes informaticas, nos interesa contar la cantidad de “saltos”
 que realizan los paquetes de datos, donde un salto se define como pasar por un nodo.
-As´ı como definimos la matriz de distancias, podemos definir la matriz de conexi´on entre nodos, donde cada celda i, j
+Ası como definimos la matriz de distancias, podemos definir la matriz de conexion entre nodos, donde cada celda i, j
 tiene un 1 si hay un unico camino a un salto de distancia entre el nodo i y el nodo j, y un 0 en caso contrario. En este
-caso, se trata de una matriz de conexi´on de orden 1, ya que indica cu´ales pares de nodos poseen 1 camino entre ellos a
+caso, se trata de una matriz de conexion de orden 1, ya que indica cu´ales pares de nodos poseen 1 camino entre ellos a
 1 salto de distancia.
-Dada la matriz de conexion de orden 1, este procedimineto debe obtener aquella de orden n que indica cu´antos caminos
-de n saltos hay entre los distintos nodos. Notar que la multiplicaci´on de una matriz de conexi´on de orden 1 consigo
-misma nos da la matriz de conexi´on de orden 2, y ası sucesivamente.4
+Dada la matriz de conexion de orden 1, este procedimineto debe obtener aquella de orden n que indica cuantos caminos
+de n saltos hay entre los distintos nodos. Notar que la multiplicacion de una matriz de conexi´on de orden 1 consigo
+misma nos da la matriz de conexion de orden 2, y ası sucesivamente.4
 \\
 \vspace{0.2cm}
 \textbf{proc cantidadNSaltos } s (inout conexi´on: seq⟨seq⟨\ent⟩⟩, in n: \ent)
@@ -77,25 +77,30 @@ se debe devolver una lista vacıa.
 \section{Resolucion de Ejercicios}
 
 \begin{quote}
-	\pred{sonCiudadesValidas}{in ciudades: seq⟨Ciudad⟩}{
+	\textbf{Ejercicio 1:}
+	\vspace{0.2cm}
+	\\
+	\vspace*{0.2cm}
+	\pred{sonCiudadesValidas}{\In ciudades: seq⟨Ciudad⟩}{
 		(\paraTodo[unalinea]{i}{\ent}{0 \leq i < |ciudades| \implicaLuego ciudades[i].habitantes > 0})   
 	}
 	
 	\vspace{0.2cm}
 	
-	\pred{sonTodasCiudadesGrandes}{in ciudades: seq⟨Ciudad⟩}{
+	\pred{sonTodasCiudadesGrandes}{\In ciudades: seq⟨Ciudad⟩}{
 		(\paraTodo[unalinea]{i}{\ent}{0 \leq i < |ciudades| \implicaLuego ciudades[i].habitantes > 50000})   
 	}
 	
 	\vspace{0.2cm}
-	
-	\aux{cantidadCiudadesGrandes}{in s:  seq⟨Ciudad⟩}{\ent}{
-		\[
-		\sum_{i=0}^{|s|-1} 1
-		\]
-	}
+	\aux{cantidadCiudadesGrandes}{\In ciudades : seq⟨Ciudad}{\ent}{\sum_{i = 0}^{|s|-1}{( \IfThenElse{s[i].habitantes > 50000}{1}{0})}
+		}
+	\vspace*{0.2cm}
+	\begin{proc}{grandesCiudades}{\In ciudades : \TLista{Ciudad}}{\TLista{Ciudad}}
+		\requiere{sonCiudadesValidas(ciudades)}
+		\asegura{|res| = cantidadCiudadesGrandes(ciudades)  \land sonTodasCiudadesGrandes(ciudades) \land \paraTodo[unalinea]{c}{Ciudad}{c \in res \implicaLuego c \in ciudades}}
+	\end{proc}	
 \end{quote}
-\endgroup
+
 
 
 
