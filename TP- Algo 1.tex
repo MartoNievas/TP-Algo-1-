@@ -15,7 +15,7 @@
 \integrante{Nievas, Martin}{453/24}{tinnivas@gmail.com}
 \integrante{Bercovich, Maximo}{002/01}{email2@dominio.com}
 \integrante{Apellido, Nicolas}{003/01}{email3@dominio.com}
-\integrante{Apellido, Andy}{000/00}{Anshe@gmai.com}
+\integrante{Pomsztein, Andy}{624/24}{pomszteinandy@gmai.com}
 \graphicspath{{../static/}}
 
 \begin{document}
@@ -72,11 +72,30 @@ se debe devolver una lista vacıa.
 \\
 \textbf{proc caminoMinimo} (in origen: \ent, in destino: \ent, in distancias: seq⟨seq⟨\ent⟩⟩) : seq⟨\ent⟩
 \end {quote}
-\subsection{WP (Weakness Precondiction)}
+\subsection{WP (Weakest Precondiction)}
 
 \section{Resolucion de Ejercicios}
 
-
+\begin{quote}
+	\pred{sonCiudadesValidas}{in ciudades: seq⟨Ciudad⟩}{
+		(\paraTodo[unalinea]{i}{\ent}{0 \leq i < |ciudades| \implicaLuego ciudades[i].habitantes > 0})   
+	}
+	
+	\vspace{0.2cm}
+	
+	\pred{sonTodasCiudadesGrandes}{in ciudades: seq⟨Ciudad⟩}{
+		(\paraTodo[unalinea]{i}{\ent}{0 \leq i < |ciudades| \implicaLuego ciudades[i].habitantes > 50000})   
+	}
+	
+	\vspace{0.2cm}
+	
+	\aux{cantidadCiudadesGrandes}{in s:  seq⟨Ciudad⟩}{\ent}{
+		\[
+		\sum_{i=0}^{|s|-1} 1
+		\]
+	}
+\end{quote}
+\endgroup
 
 
 
