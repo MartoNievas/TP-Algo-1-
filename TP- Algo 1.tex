@@ -95,7 +95,7 @@ se debe devolver una lista vacıa.
 	\textbf{Ejercicio 2:}
 	\vspace{0.2cm}
 	\\ 
-	\pred{mimasCiudades}{\In s: \TLista{Ciudad}, \In l: \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego \existe[unalinea]{j}{\ent}{0 \leq j < |l| \yLuego s[i] = l[j]}} }
+	\pred{mimasCiudades}{\In s: \TLista{Ciudad}, \In l: \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego \existe[unalinea]{j}{\ent}{0 \leq j < |l| \yLuego s[i].nombre = l[j].nombre}} }
 	\vspace{0.2cm}
 	\pred{esLaSuma}{\In res : \TLista{Ciudad}, \In s: \TLista{Ciudad}, \In l: \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |res| \implicaLuego \existe[unalinea]{j,k}{\ent}{0 \leq j < |s| \land 0 \leq k < |l| \yLuego res[i].habitantes = s[j].habitantes + l[k].habitantes }}}
 	\vspace{0.2cm}
