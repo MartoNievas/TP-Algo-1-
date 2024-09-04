@@ -81,24 +81,30 @@ se debe devolver una lista vacıa.
 	\vspace{0.2cm}
 	\\
 	\vspace*{0.2cm}
-	\pred{sonCiudadesValidas}{\In ciudades: seq⟨Ciudad⟩}{
-		(\paraTodo[unalinea]{i}{\ent}{0 \leq i < |ciudades| \implicaLuego ciudades[i].habitantes > 0})   
-	}
-	
-	\vspace{0.2cm}
-	
 	\pred{sonTodasCiudadesGrandes}{\In ciudades: seq⟨Ciudad⟩}{
 		(\paraTodo[unalinea]{i}{\ent}{0 \leq i < |ciudades| \implicaLuego ciudades[i].habitantes > 50000})   
 	}
-	
 	\vspace{0.2cm}
 	\aux{cantidadCiudadesGrandes}{\In ciudades : seq⟨Ciudad}{\ent}{\sum_{i = 0}^{|s|-1}{( \IfThenElse{s[i].habitantes > 50000}{1}{0})}
-		}
+	}
 	\vspace*{0.2cm}
 	\begin{proc}{grandesCiudades}{\In ciudades : \TLista{Ciudad}}{\TLista{Ciudad}}
-		\requiere{sonCiudadesValidas(ciudades)}
+		\requiere{\True}
 		\asegura{|res| = cantidadCiudadesGrandes(ciudades)  \land sonTodasCiudadesGrandes(ciudades) \land \paraTodo[unalinea]{c}{Ciudad}{c \in res \implicaLuego c \in ciudades}}
 	\end{proc}	
+	\textbf{Ejercicio 2:}
+	\vspace{0.2cm}
+	\\ 
+	\pred{mimasCiudades}{\In s: \TLista{Ciudad}, \In l: \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego \existe[unalinea]{j}{\ent}{0 \leq j < |l| \yLuego s[i] = l[j]}} }
+	\vspace{0.2cm}
+	\pred{esLaSuma}{\In res : \TLista{Ciudad}, \In s: \TLista{Ciudad}, \In l: \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |res| \implicaLuego \existe[unalinea]{j,k}{\ent}{0 \leq j < |s| \land 0 \leq k < |l| \yLuego res[i].habitantes = s[j].habitantes + l[k].habitantes }}}
+	\vspace{0.2cm}
+	\begin{proc}{sumaDeHabitantes}{\In menoresDeCiudades : \TLista{Ciudad}, \In mayoresDeCiudad : \TLista{Ciudad}}{\TLista{Ciudad}}
+		\requiere{|menoresDeCiudades| = |mayoresDeCiudades|  \land \\ mismasCiudades(menoresDeCiudades, mayoresDeCiudades)}
+		\asegura{esLaSuma(res, menoresDeCiudades, mayoresDeCiudades) \land \\ mismasCiudades(res, menoresDeCiudades) \land mismasCiudades(res, mayoresDeCiudades)}
+	\end{proc}
+	\textbf{Ejercicio 3:}
+	
 \end{quote}
 
 
