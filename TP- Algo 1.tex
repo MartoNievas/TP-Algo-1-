@@ -99,12 +99,23 @@ se debe devolver una lista vacıa.
 	\vspace{0.2cm}
 	\pred{esLaSuma}{\In res : \TLista{Ciudad}, \In s: \TLista{Ciudad}, \In l: \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |res| \implicaLuego \existe[unalinea]{j,k}{\ent}{0 \leq j < |s| \land 0 \leq k < |l| \yLuego res[i].habitantes = s[j].habitantes + l[k].habitantes }}}
 	\vspace{0.2cm}
+	\pred{ciudadesDistintas}{\In ciudades : \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |ciudades| \implicaLuego \neg \existe[unalinea]{j}{\ent}{0 \leq j <|ciudades| \land i \neq j \yLuego ciudades[i].nombre = ciudades[j].nombre} }}
 	\begin{proc}{sumaDeHabitantes}{\In menoresDeCiudades : \TLista{Ciudad}, \In mayoresDeCiudad : \TLista{Ciudad}}{\TLista{Ciudad}}
 		\requiere{|menoresDeCiudades| = |mayoresDeCiudades|  \land \\ mismasCiudades(menoresDeCiudades, mayoresDeCiudades)}
-		\asegura{esLaSuma(res, menoresDeCiudades, mayoresDeCiudades) \land \\ mismasCiudades(res, menoresDeCiudades) \land mismasCiudades(res, mayoresDeCiudades)}
+		\asegura{esLaSuma(res, menoresDeCiudades, mayoresDeCiudades) \land \\ mismasCiudades(res, menoresDeCiudades) \land mismasCiudades(res, mayoresDeCiudades)  \land \\ ciudadesDistintas(menoresDeCiudades) \land ciudadesDistintas(mayoresDeCiudades)}
 	\end{proc}
 	\textbf{Ejercicio 3:}
-	
+	\vspace*{0.2cm}
+	\\
+	\pred{todosPositivos}{\In s : \TLista{\ent}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego s[i] \leq 0}}
+	\vspace{0.2cm}
+	\pred{distanciasValidas}{\In s : \matriz{\ent}}{\paraTodo[unalinea]{i, j}{\ent}{0 \leq i < |s| \land 0 \leq j < s[i] \land i = j \implicaLuego s[i][j] = 0}}
+	\vspace{0.2cm}
+	\pred{esMatrizSimetrica}{\In s : \matriz{\ent}}{\paraTodo[unalinea]{i, j}{\ent}{0 \leq i < |s| \land 0 \leq j < |s[i]| \implicaLuego s[i][j] = s[j][i] \land todosPositivos(s[i])}}
+	\vspace{0.2cm}
+	\pred{esMatrizCuadrada}{\In s : \matriz{\ent}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego |s[i]| = |s|}}
+	\vspace*{0.2cm}
+	\pred{esCamino}{\In distancias : \matriz{\ent}, c : \TLista{\ent}, d : \ent, h : \ent}{esMatrizCuadrada(distancias) \yLuego \paraTodo[unalinea]{e}{\ent}{e \in c \implicaLuego 0 \leq c < |distancias| \land (c[0] = d \land c[|c|-1] = h) \land \paraTodo[unalinea]{i}{\ent}{ 0 \leq i < |c|-1 \implicaLuego distancias[c[i]][c[i+1]] > 0 }}}
 \end{quote}
 
 
