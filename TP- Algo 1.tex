@@ -73,9 +73,20 @@ se debe devolver una lista vacıa.
 \textbf{proc caminoMinimo} (in origen: \ent, in destino: \ent, in distancias: seq⟨seq⟨\ent⟩⟩) : seq⟨\ent⟩
 \end {quote}
 \subsection{WP (Weakest Precondiction)}
-
+\section{Predicados Reutilizables}
+\begin{quote}
+	\pred{todosPositivos}{ s : \TLista{\ent}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego s[i] \leq 0}}
+	\vspace{0.2cm}
+	\pred{diagonalEnCeros}{ s : \matriz{\ent}}{\paraTodo[unalinea]{i, j}{\ent}{0 \leq i < |s| \land 0 \leq j < s[i] \land i = j \implicaLuego s[i][j] = 0}}
+	\vspace{0.2cm}
+	\pred{esMatrizSimetrica}{ s : \matriz{\ent}}{\paraTodo[unalinea]{i, j}{\ent}{0 \leq i < |s| \land 0 \leq j < |s[i]| \implicaLuego s[i][j] = s[j][i] \land todosPositivos(s[i])}}
+	\vspace{0.2cm}
+	\pred{esMatrizCuadrada}{ s : \matriz{\ent}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego |s[i]| = |s|}}
+	\vspace*{0.2cm}
+	\pred{esCamino}{ distancias : \matriz{\ent}, c : \TLista{\ent}, d : \ent, h : \ent}{(esMatrizCuadrada(distancias) \land |c| \geq 1) \yLuego (|c| \geq 1)  \paraTodo[unalinea]{e}{\ent}{e \in c \implicaLuego 0 \leq c < |distancias| \land (c[0] = d \land c[|c|-1] = h) \land \paraTodo[unalinea]{i}{\ent}{ 0 \leq i < |c|-1 \implicaLuego distancias[c[i]][c[i+1]] > 0 }}}
+\end{quote}
 \section{Resolucion de Ejercicios}
-
+\subsection{Especificacion}
 \begin{quote}
 	\textbf{Ejercicio 1:}
 	\vspace{0.2cm}
@@ -101,21 +112,34 @@ se debe devolver una lista vacıa.
 	\vspace{0.2cm}
 	\pred{ciudadesDistintas}{ ciudades : \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |ciudades| \implicaLuego \neg \existe[unalinea]{j}{\ent}{0 \leq j <|ciudades| \land i \neq j \yLuego ciudades[i].nombre = ciudades[j].nombre} }}
 	\begin{proc}{sumaDeHabitantes}{\In menoresDeCiudades : \TLista{Ciudad}, \In mayoresDeCiudad : \TLista{Ciudad}}{\TLista{Ciudad}}
-		\requiere{|menoresDeCiudades| = |mayoresDeCiudades|  \land \\ mismasCiudades(menoresDeCiudades, mayoresDeCiudades)}
-		\asegura{esLaSuma(res, menoresDeCiudades, mayoresDeCiudades) \land \\ mismasCiudades(res, menoresDeCiudades) \land mismasCiudades(res, mayoresDeCiudades)  \land \\ ciudadesDistintas(menoresDeCiudades) \land ciudadesDistintas(mayoresDeCiudades)}
+		\requiere{|menoresDeCiudades| = |mayoresDeCiudades|  \land \\ mismasCiudades(menoresDeCiudades, mayoresDeCiudades \land \\ ciudadesDistintas(menoresDeCiudades) \land ciudadesDistintas(mayoresDeCiudades))}
+		\asegura{esLaSuma(res, menoresDeCiudades, mayoresDeCiudades) \land \\ mismasCiudades(res, menoresDeCiudades) \land mismasCiudades(res, mayoresDeCiudades) }
 	\end{proc}
 	\textbf{Ejercicio 3:}
+	\begin{proc}{hayCamino}{\In distancias : \matriz{\ent}, \In desde : \ent, \In hasta : \ent}{\bool}
+		\requiere{esMatrizCuadrada(distancias) \land diagonalEnCeros(distancias) \land esMatrizSimetrica(distancias) \land ( 0 \leq desde < |distancias| \land 0 \leq hasta < |distancias|)}
+		\asegura{res = \True \longleftrightarrow \existe[unalinea]{c}{\TLista{\ent}}{esCamino (distancias, c, desde, hasta) \vee (distacias[desde][hasta] > 0)}}
+	\end{proc}
+	\textbf{Ejercicio 4:} \\
+	\begin{proc}{cantidadDeCaminosNSaltos}{\Inout conexion : \matriz{\ent}, n : \ent}{}
+		\requiere{conexion = conexion_0 \land esMatrizCuadrada(conexion) \land cerosEnLaDiagonal(conexion) \land esMatrizSimetrica(conexion) \land esMatrizConCerosYUnos(conexion) }	
+		\asegura{\longitud{conexion} = \longitud{conexion_0} \yLuego \paraTodo[unalinea]{i}{\ent}{0 \leq i < \longitud{conexion_0} \implicaLuego \longitud{conexion[i]} = \longitud{conexion_0} \land esMatrizDeOrdenN(conexion,conexion_0,n)}}
+	\end{proc}
+	\vspace{0.2cm}
+	\pred{esMatrizConCerosYUnos}{conexion : \matriz{\ent}}{\paraTodo[unalinea]{i, j}{\ent}{0 \leq 0 < \longitud{conexion} \land i \leq j < \longitud{conexion[i]} \implicaLuego (conexion[i][j] = 0 \vee conexion[i][j] = 1)}}
 	\vspace*{0.2cm}
-	\\
-	\pred{todosPositivos}{ s : \TLista{\ent}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego s[i] \leq 0}}
-	\vspace{0.2cm}
-	\pred{distanciasValidas}{ s : \matriz{\ent}}{\paraTodo[unalinea]{i, j}{\ent}{0 \leq i < |s| \land 0 \leq j < s[i] \land i = j \implicaLuego s[i][j] = 0}}
-	\vspace{0.2cm}
-	\pred{esMatrizSimetrica}{ s : \matriz{\ent}}{\paraTodo[unalinea]{i, j}{\ent}{0 \leq i < |s| \land 0 \leq j < |s[i]| \implicaLuego s[i][j] = s[j][i] \land todosPositivos(s[i])}}
-	\vspace{0.2cm}
-	\pred{esMatrizCuadrada}{ s : \matriz{\ent}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego |s[i]| = |s|}}
+	\pred{esIdentidad}{m : \matriz{\ent}}{esMatrizCuadra \yLuego \paraTodo[unalinea]{i, j}{\ent}{0 \leq i < \longitud{m} \land 0 \leq j < \longitud{m[i]} \implicaLuego ((i = j \land m[i][j] = 1) \vee (i \neq j \land m[i][j] = 0))}}
 	\vspace*{0.2cm}
-	\pred{esCamino}{ distancias : \matriz{\ent}, c : \TLista{\ent}, d : \ent, h : \ent}{(esMatrizCuadrada(distancias) \land |c| \geq 1) \yLuego (|c| \geq 1)  \paraTodo[unalinea]{e}{\ent}{e \in c \implicaLuego 0 \leq c < |distancias| \land (c[0] = d \land c[|c|-1] = h) \land \paraTodo[unalinea]{i}{\ent}{ 0 \leq i < |c|-1 \implicaLuego distancias[c[i]][c[i+1]] > 0 }}}
+	\pred{esProducto}{m : \matriz{\ent}, n : \matriz{\ent}, o : \matriz{\ent}, n : \ent}{\paraTodo[unalinea]{i, j}{\ent}{0 \leq i < \longitud{m} \land 0 \leq j < \longitud{m[i]} \implicaLuego m[i][j] = \sum_{k = 0}^{\longitud{n} -1} n[i][k] * o[k][j]}}
+	\vspace*{0.2cm}
+	\pred{esMatrizDeOrdenN}{s : \matriz{\ent}, l : \matriz{\ent}}{\existe[unalinea]{lista}{\TLista{\matriz{\ent}}}{(\longitud{lista} = n + 1 \land esIdentidad(lista[0]) \land lista[1] = l \land lista[n] = s ) \land \paraTodo[unalinea]{i}{\ent}{1 \leq i \leq n \implicaLuego (esProducto(lista[i],lista[i-1],lista[1]))}}}
+	\textbf{Ejericio 5:} \\
+	\begin{proc}{caminoMinimo}{\In origen : \ent, \In destino : \ent, \In distancias : \matriz{\ent}}{\TLista{\ent}}
+		\requiere{(diagonalEnCeros(distancias) \land esMatrizCuadrada(distancias) \land esMatrizSimetrica(distancias) \land (0 \leq origen < \longitud{distancias} \land 0 \leq destino < \longitud{distancias}))}
+		\asegura{(esCamino(res) \yLuego \paraTodo[unalinea]{c}{\TLista{\ent}}{esCamino(c) \implicaLuego distanciaRecorrida(res) \geq distanciaRecorrida(c)}) \vee (res = \lvacia) \longleftrightarrow \neg \existe[unalinea]{c}{\TLista{\ent}}{esCamino(c)}}
+	\end{proc}
+	\aux{distanciaRecorrida}{distancias : \matriz{\ent}, c : \TLista{\ent}}{\ent}{\sum_{i = 0}^{\longitud{c}-2}distancias[c[i]][c[i+1]]}
+	\subsection{WP (Weakest Precondition)}
 \end{quote}
 
 
