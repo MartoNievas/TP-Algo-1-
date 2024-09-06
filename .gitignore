@@ -1,0 +1,10 @@
+# Ignorar archivos auxiliares de LaTeX
+*.aux
+*.log
+*.gz
+
+# Ignorar imágenes con extensión .jpg
+*.jpg
+
+# Ignorar archivos de estilo de LaTeX
+*.sty
