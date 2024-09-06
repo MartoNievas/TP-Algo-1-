@@ -77,13 +77,15 @@ se debe devolver una lista vacıa.
 \begin{quote}
 	\pred{todosPositivos}{ s : \TLista{\ent}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego s[i] \leq 0}}
 	\vspace{0.2cm}
+	\pred{distanciasValidas}{distancias : \matriz{\ent}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < \longitud{distancias} \implicaLuego todosPositivos(distancias[i])}}
+	\vspace*{0.2cm}
 	\pred{diagonalEnCeros}{ s : \matriz{\ent}}{\paraTodo[unalinea]{i, j}{\ent}{0 \leq i < |s| \land 0 \leq j < s[i] \land i = j \implicaLuego s[i][j] = 0}}
 	\vspace{0.2cm}
-	\pred{esMatrizSimetrica}{ s : \matriz{\ent}}{\paraTodo[unalinea]{i, j}{\ent}{0 \leq i < |s| \land 0 \leq j < |s[i]| \implicaLuego s[i][j] = s[j][i] \land todosPositivos(s[i])}}
+	\pred{esMatrizSimetrica}{ s : \matriz{\ent}}{\paraTodo[unalinea]{i, j}{\ent}{0 \leq i < |s| \land 0 \leq j < |s[i]| \implicaLuego s[i][j] = s[j][i]}}
 	\vspace{0.2cm}
 	\pred{esMatrizCuadrada}{ s : \matriz{\ent}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego |s[i]| = |s|}}
 	\vspace*{0.2cm}
-	\pred{esCamino}{ distancias : \matriz{\ent}, c : \TLista{\ent}, d : \ent, h : \ent}{(esMatrizCuadrada(distancias) \land |c| \geq 1) \yLuego (|c| \geq 1)  \paraTodo[unalinea]{e}{\ent}{e \in c \implicaLuego 0 \leq c < |distancias| \land (c[0] = d \land c[|c|-1] = h) \land \paraTodo[unalinea]{i}{\ent}{ 0 \leq i < |c|-1 \implicaLuego distancias[c[i]][c[i+1]] > 0 }}}
+	\pred{esCamino}{ distancias : \matriz{\ent}, c : \TLista{\ent}, d : \ent, h : \ent}{(esMatrizCuadrada(distancias) \land |c| \geq 2) \yLuego (|c| \geq 1)  \paraTodo[unalinea]{e}{\ent}{e \in c \implicaLuego 0 \leq c < |distancias| \land (c[0] = d \land c[|c|-1] = h) \land \paraTodo[unalinea]{i}{\ent}{ 0 \leq i < |c|-1 \implicaLuego distancias[c[i]][c[i+1]] > 0 }}}
 \end{quote}
 \section{Resolucion de Ejercicios}
 \subsection{Especificacion}
@@ -117,7 +119,7 @@ se debe devolver una lista vacıa.
 	\end{proc}
 	\textbf{Ejercicio 3:}
 	\begin{proc}{hayCamino}{\In distancias : \matriz{\ent}, \In desde : \ent, \In hasta : \ent}{\bool}
-		\requiere{esMatrizCuadrada(distancias) \land diagonalEnCeros(distancias) \land esMatrizSimetrica(distancias) \land ( 0 \leq desde < |distancias| \land 0 \leq hasta < |distancias|)}
+		\requiere{esMatrizCuadrada(distancias) \land diagonalEnCeros(distancias) \land esMatrizSimetrica(distancias) \land distanciasValidas(distancias) \land ( 0 \leq desde < |distancias| \land 0 \leq hasta < |distancias|)}
 		\asegura{res = \True \longleftrightarrow \existe[unalinea]{c}{\TLista{\ent}}{esCamino (distancias, c, desde, hasta) \vee (distacias[desde][hasta] > 0)}}
 	\end{proc}
 	\textbf{Ejercicio 4:} \\
@@ -135,7 +137,7 @@ se debe devolver una lista vacıa.
 	\pred{esMatrizDeOrdenN}{s : \matriz{\ent}, l : \matriz{\ent}}{\existe[unalinea]{lista}{\TLista{\matriz{\ent}}}{(\longitud{lista} = n + 1 \land esIdentidad(lista[0]) \land lista[1] = l \land lista[n] = s ) \land \paraTodo[unalinea]{i}{\ent}{1 \leq i \leq n \implicaLuego (esProducto(lista[i],lista[i-1],lista[1]))}}}
 	\textbf{Ejericio 5:} \\
 	\begin{proc}{caminoMinimo}{\In origen : \ent, \In destino : \ent, \In distancias : \matriz{\ent}}{\TLista{\ent}}
-		\requiere{(diagonalEnCeros(distancias) \land esMatrizCuadrada(distancias) \land esMatrizSimetrica(distancias) \land (0 \leq origen < \longitud{distancias} \land 0 \leq destino < \longitud{distancias}))}
+		\requiere{(diagonalEnCeros(distancias) \land esMatrizCuadrada(distancias) \land esMatrizSimetrica(distancias) \land distanciasValidas(distancias) \land (0 \leq origen < \longitud{distancias} \land 0 \leq destino < \longitud{distancias}))}
 		\asegura{(esCamino(res) \yLuego \paraTodo[unalinea]{c}{\TLista{\ent}}{esCamino(c) \implicaLuego distanciaRecorrida(res) \geq distanciaRecorrida(c)}) \vee (res = \lvacia) \longleftrightarrow \neg \existe[unalinea]{c}{\TLista{\ent}}{esCamino(c)}}
 	\end{proc}
 	\aux{distanciaRecorrida}{distancias : \matriz{\ent}, c : \TLista{\ent}}{\ent}{\sum_{i = 0}^{\longitud{c}-2}distancias[c[i]][c[i+1]]}
