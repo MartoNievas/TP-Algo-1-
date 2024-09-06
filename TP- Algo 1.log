@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.8.29)  6 SEP 2024 15:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.8.29)  6 SEP 2024 17:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -420,6 +420,17 @@ T1/cmr/m/n/10 ) : $\U/dsrom/m/n/10 Z$ \OT1/cmr/m/n/10 = $[][] []$\OT1/cmr/bx/n/
  []
 
 
+Overfull \hbox (18.83882pt too wide) in paragraph at lines 106--106
+ []\OT1/cmtt/m/n/10 asegura \OMS/cmsy/m/n/10 f$j\OML/cmm/m/it/10 res\OMS/cmsy/m
+/n/10 j \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 cantidadCiudadesGrandes\OT1/cmr/m/n/
+10 (\OML/cmm/m/it/10 ciudades\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it
+/10 sonTodasCiudadesGrandes\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 res\OT1/cmr/m/n/10
+ ) \OMS/cmsy/m/n/10 ^ \OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 c \OT
+1/cmr/m/n/10 : \OML/cmm/m/it/10 Ciudad\OT1/cmr/m/n/10 ) (\OML/cmm/m/it/10 c \OM
+S/cmsy/m/n/10 2
+ []
+
+
 Overfull \hbox (3.75832pt too wide) in paragraph at lines 116--116
 \OT1/cmtt/m/n/10 proc sumaDeHabitantes \OT1/cmr/m/n/10 (\OT1/cmss/m/n/10 in \OT
 1/cmr/m/n/10 me-no-res-De-Ciu-da-des : $\OML/cmm/m/it/10 seq\OMS/cmsy/m/n/10 h\
@@ -522,7 +533,7 @@ c/amsfonts/cm/cmsy10.pfb><C:/Users/rubia/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmsy7.pfb><C:/Users/rubia/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/rubia/AppData/Local/Program
 s/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb>
-Output written on "TP- Algo 1.pdf" (4 pages, 552866 bytes).
+Output written on "TP- Algo 1.pdf" (4 pages, 552893 bytes).
 PDF statistics:
  94 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

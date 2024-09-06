@@ -103,14 +103,14 @@ se debe devolver una lista vacıa.
 	\vspace*{0.2cm}
 	\begin{proc}{grandesCiudades}{\In ciudades : \TLista{Ciudad}}{\TLista{Ciudad}}
 		\requiere{\True}
-		\asegura{|res| = cantidadCiudadesGrandes(ciudades)  \land sonTodasCiudadesGrandes(ciudades) \land \paraTodo[unalinea]{c}{Ciudad}{c \in res \implicaLuego c \in ciudades}}
+		\asegura{|res| = cantidadCiudadesGrandes(ciudades)  \land sonTodasCiudadesGrandes(res) \land \paraTodo[unalinea]{c}{Ciudad}{c \in res \implicaLuego c \in ciudades}}
 	\end{proc}	
 	\textbf{Ejercicio 2:}
 	\vspace{0.2cm}
 	\\ 
 	\pred{mimasCiudades}{ s: \TLista{Ciudad},  l: \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego \existe[unalinea]{j}{\ent}{0 \leq j < |l| \yLuego s[i].nombre = l[j].nombre}} }
 	\vspace{0.2cm}
-	\pred{esLaSuma}{ res : \TLista{Ciudad},  s: \TLista{Ciudad},  l: \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |res| \implicaLuego \existe[unalinea]{j,k}{\ent}{0 \leq j < |s| \land 0 \leq k < |l| \yLuego res[i].habitantes = s[j].habitantes + l[k].habitantes }}}
+	\pred{esLaSuma}{ res : \TLista{Ciudad},  s: \TLista{Ciudad},  l: \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |res| \implicaLuego \existe[unalinea]{j,k}{\ent}{0 \leq j < |s| \land 0 \leq k < |l| \yLuego s[j].nombre = l[k].nombre \land res[i].habitantes = s[j].habitantes + l[k].habitantes }}}
 	\vspace{0.2cm}
 	\pred{ciudadesDistintas}{ ciudades : \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |ciudades| \implicaLuego \neg \existe[unalinea]{j}{\ent}{0 \leq j <|ciudades| \land i \neq j \yLuego ciudades[i].nombre = ciudades[j].nombre} }}
 	\begin{proc}{sumaDeHabitantes}{\In menoresDeCiudades : \TLista{Ciudad}, \In mayoresDeCiudad : \TLista{Ciudad}}{\TLista{Ciudad}}
