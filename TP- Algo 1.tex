@@ -1,5 +1,7 @@
 \documentclass[10pt,a4paper]{article}
-
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
 \input{AEDmacros}
 \usepackage{caratula} % Version modificada para usar las macros de algo1 de ~> https://github.com/bcardiff/dc-tex
 
@@ -27,7 +29,7 @@
 \begin{quote}
 \vspace{0.2cm}
 \textbf{1. grandesCiudades} A partir de una lista de ciudades, devuelve aquellas que tienen m´as de 50.000 habitantes.
-\textbf {proc  grandesCiudades} (in ciudades: seq⟨Ciudad⟩) : seq⟨Ciudad⟩
+\textbf {proc  grandesCiudades} (\In ciudades: \TLista{Ciudad}) : \TLista{Ciudad}
 \vspace{0.2cm}
 \\
 \vspace{0.2cm}
@@ -37,7 +39,7 @@ con sus habitantes mayores y otra con sus habitantes menores, este procedimiento
 con la cantidad total de sus habitantes.
 \\
 \vspace{0.2cm}
-\textbf {proc sumaDeHabitantes} (in menoresDeCiudades: seq⟨Ciudad⟩, in mayoresDeCiudades: seq⟨Ciudad⟩) : seq⟨Ciudad⟩
+\textbf {proc sumaDeHabitantes} (\In menoresDeCiudades: \TLista{Ciudad}, \In mayoresDeCiudades: \TLista{Ciudad}) : \TLista{Ciudad}
 \\
 \vspace{0.2cm}
 \textbf{3. hayCamino:} Un mapa de ciudades esta conformada por ciudades y caminos que unen a algunas de ellas. A partir de
@@ -47,7 +49,7 @@ de una ciudad hacia s´ı misma es cero y la distancia entre A y B es la misma q
 \vspace{0.2cm}
 \\ 
 \vspace{0.2cm}
-\textbf{proc hayCamino} o (in distancias: seq⟨seq⟨\ent⟩⟩, in desde: \ent, in hasta: \ent) : \bool
+\textbf{proc hayCamino} o (\In distancias: \matriz{\ent}, \In desde: \ent, \In hasta: \ent) : \bool
 \vspace{0.2cm}
 \\
 \vspace{0.2cm}
@@ -58,11 +60,11 @@ tiene un 1 si hay un unico camino a un salto de distancia entre el nodo i y el n
 caso, se trata de una matriz de conexion de orden 1, ya que indica cu´ales pares de nodos poseen 1 camino entre ellos a
 1 salto de distancia.
 Dada la matriz de conexion de orden 1, este procedimineto debe obtener aquella de orden n que indica cuantos caminos
-de n saltos hay entre los distintos nodos. Notar que la multiplicacion de una matriz de conexi´on de orden 1 consigo
+de n saltos hay entre los distintos nodos. Notar que la multiplicacion de una matriz de conexion de orden 1 consigo
 misma nos da la matriz de conexion de orden 2, y ası sucesivamente.4
 \\
 \vspace{0.2cm}
-\textbf{proc cantidadNSaltos } s (inout conexi´on: seq⟨seq⟨\ent⟩⟩, in n: \ent)
+\textbf{proc cantidadNSaltos } s (\Inout conexion: \matriz{\ent}, \In n: \ent)
 \vspace{0.2cm}
 \\
 \vspace{0.2cm}
@@ -73,9 +75,30 @@ se debe devolver una lista vacıa.
 \textbf{proc caminoMinimo} (in origen: \ent, in destino: \ent, in distancias: seq⟨seq⟨\ent⟩⟩) : seq⟨\ent⟩
 \end {quote}
 \subsection{WP (Weakest Precondiction)}
+\begin{quote}
+	La funcion poblacionTotal recibe una lista de ciudades donde al menos una de ellas es grande (es decir, supera los
+	50.000 habitantes) y devuelve la cantidad total de habitantes. Dada la siguiente especificacion:
+	\begin{proc}{poblacionTotal}{\In ciudades : \TLista{Ciudad}}{\ent}
+		\requiere {\existe[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \yLuego ciudades[i].habitantes > 50,000 \land \paraTodo[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \implicaLuego ciudades[i].habitantes \geq 0 } \land \paraTodo[unalinea]{i, j}{\ent}{0 \leq i < j \implicaLuego ciudades[i].nombre \neq ciudades[j].nombre }}}		
+		\asegura{res = \sum_{i=0}^{\longitud{ciudades}-1}ciudades[i].habitantes}
+	\end{proc}
+	\text{Con la siguiente implementacion:}
+	\begin{lstlisting}[caption={},label=code:for]
+		res := 0;
+		i := 0;
+		while (i < ciudades.lenght()) do
+		res := res + ciudades[i].habitantes;
+		i := i + 1
+		endwhile
+	\end{lstlisting}
+	\begin{itemize}
+		\item1. Demostrar que la implementacion es correcta con respecto a la especificacion.
+		\item2. Demostrar que el valor devuelto es mayor a 50.000.
+	\end{itemize}
+\end{quote}
 \section{Predicados Reutilizables}
 \begin{quote}
-	\pred{todosPositivos}{ s : \TLista{\ent}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego s[i] \leq 0}}
+	\pred{todosPositivos}{ s : \TLista{\ent}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego s[i] \geq 0}}
 	\vspace{0.2cm}
 	\pred{distanciasValidas}{distancias : \matriz{\ent}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < \longitud{distancias} \implicaLuego todosPositivos(distancias[i])}}
 	\vspace*{0.2cm}
@@ -92,8 +115,10 @@ se debe devolver una lista vacıa.
 \begin{quote}
 	\textbf{Ejercicio 1:}
 	\vspace{0.2cm}
-	\\
-	\vspace*{0.2cm}
+	\begin{proc}{grandesCiudades}{\In ciudades : \TLista{Ciudad}}{\TLista{Ciudad}}
+		\requiere{\True}
+		\asegura{|res| = cantidadCiudadesGrandes(ciudades)  \land sonTodasCiudadesGrandes(res) \land \paraTodo[unalinea]{c}{Ciudad}{c \in res \implicaLuego c \in ciudades}}
+	\end{proc}	
 	\pred{sonTodasCiudadesGrandes}{ ciudades : \TLista{Ciudad}}{
 		(\paraTodo[unalinea]{i}{\ent}{0 \leq i < |ciudades| \implicaLuego ciudades[i].habitantes > 50000})   
 	}
@@ -101,22 +126,17 @@ se debe devolver una lista vacıa.
 	\aux{cantidadCiudadesGrandes}{ ciudades :\TLista{Ciudad}}{\ent}{\sum_{i = 0}^{|s|-1}{( \IfThenElse{s[i].habitantes > 50000}{1}{0})}
 	}
 	\vspace*{0.2cm}
-	\begin{proc}{grandesCiudades}{\In ciudades : \TLista{Ciudad}}{\TLista{Ciudad}}
-		\requiere{\True}
-		\asegura{|res| = cantidadCiudadesGrandes(ciudades)  \land sonTodasCiudadesGrandes(res) \land \paraTodo[unalinea]{c}{Ciudad}{c \in res \implicaLuego c \in ciudades}}
-	\end{proc}	
 	\textbf{Ejercicio 2:}
-	\vspace{0.2cm}
-	\\ 
-	\pred{mimasCiudades}{ s: \TLista{Ciudad},  l: \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego \existe[unalinea]{j}{\ent}{0 \leq j < |l| \yLuego s[i].nombre = l[j].nombre}} }
+	\begin{proc}{sumaDeHabitantes}{\In menoresDeCiudades : \TLista{Ciudad}, \In mayoresDeCiudad : \TLista{Ciudad}}{\TLista{Ciudad}}
+		\requiere{|menoresDeCiudades| = |mayoresDeCiudades|  \land \\ mismasCiudades(menoresDeCiudades, mayoresDeCiudades \land \\ ciudadesDistintas(menoresDeCiudades) \land ciudadesDistintas(mayoresDeCiudades))}
+		\asegura{\longitud{res} = \longitud{menoresDeCiudades} \land esLaSuma(res, menoresDeCiudades, mayoresDeCiudades) \land \\ mismasCiudades(res, menoresDeCiudades) \land mismasCiudades(res, mayoresDeCiudades) }
+	\end{proc}
+	\pred{mismasCiudades}{ s: \TLista{Ciudad},  l: \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego \existe[unalinea]{j}{\ent}{0 \leq j < |l| \yLuego s[i].nombre = l[j].nombre}} }
 	\vspace{0.2cm}
 	\pred{esLaSuma}{ res : \TLista{Ciudad},  s: \TLista{Ciudad},  l: \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |res| \implicaLuego \existe[unalinea]{j,k}{\ent}{0 \leq j < |s| \land 0 \leq k < |l| \yLuego s[j].nombre = l[k].nombre \land res[i].habitantes = s[j].habitantes + l[k].habitantes }}}
 	\vspace{0.2cm}
 	\pred{ciudadesDistintas}{ ciudades : \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |ciudades| \implicaLuego \neg \existe[unalinea]{j}{\ent}{0 \leq j <|ciudades| \land i \neq j \yLuego ciudades[i].nombre = ciudades[j].nombre} }}
-	\begin{proc}{sumaDeHabitantes}{\In menoresDeCiudades : \TLista{Ciudad}, \In mayoresDeCiudad : \TLista{Ciudad}}{\TLista{Ciudad}}
-		\requiere{|menoresDeCiudades| = |mayoresDeCiudades|  \land \\ mismasCiudades(menoresDeCiudades, mayoresDeCiudades \land \\ ciudadesDistintas(menoresDeCiudades) \land ciudadesDistintas(mayoresDeCiudades))}
-		\asegura{esLaSuma(res, menoresDeCiudades, mayoresDeCiudades) \land \\ mismasCiudades(res, menoresDeCiudades) \land mismasCiudades(res, mayoresDeCiudades) }
-	\end{proc}
+	\vspace*{0.2cm}
 	\textbf{Ejercicio 3:}
 	\begin{proc}{hayCamino}{\In distancias : \matriz{\ent}, \In desde : \ent, \In hasta : \ent}{\bool}
 		\requiere{esMatrizCuadrada(distancias) \land diagonalEnCeros(distancias) \land esMatrizSimetrica(distancias) \land distanciasValidas(distancias) \land ( 0 \leq desde < |distancias| \land 0 \leq hasta < |distancias|)}
@@ -138,10 +158,13 @@ se debe devolver una lista vacıa.
 	\textbf{Ejericio 5:} \\
 	\begin{proc}{caminoMinimo}{\In origen : \ent, \In destino : \ent, \In distancias : \matriz{\ent}}{\TLista{\ent}}
 		\requiere{(diagonalEnCeros(distancias) \land esMatrizCuadrada(distancias) \land esMatrizSimetrica(distancias) \land distanciasValidas(distancias) \land (0 \leq origen < \longitud{distancias} \land 0 \leq destino < \longitud{distancias}))}
-		\asegura{(esCamino(res) \yLuego \paraTodo[unalinea]{c}{\TLista{\ent}}{esCamino(c) \implicaLuego distanciaRecorrida(res) \geq distanciaRecorrida(c)}) \vee (res = \lvacia) \longleftrightarrow \neg \existe[unalinea]{c}{\TLista{\ent}}{esCamino(c)}}
+		\asegura{(esCamino(res) \yLuego \paraTodo[unalinea]{c}{\TLista{\ent}}{esCamino(c) \implicaLuego distanciaRecorrida(distancias, res) \geq distanciaRecorrida(distancias, c)}) \vee (res = \lvacia) \longleftrightarrow \neg \existe[unalinea]{c}{\TLista{\ent}}{esCamino(distancias, c, origen, destino)}}
 	\end{proc}
 	\aux{distanciaRecorrida}{distancias : \matriz{\ent}, c : \TLista{\ent}}{\ent}{\sum_{i = 0}^{\longitud{c}-2}distancias[c[i]][c[i+1]]}
-	\subsection{WP (Weakest Precondition)}
+\end{quote}
+\subsection{WP (Weakest Precondition)}
+\begin{quote}
+
 \end{quote}
 
 
