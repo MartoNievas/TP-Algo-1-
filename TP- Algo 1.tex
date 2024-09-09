@@ -1,7 +1,5 @@
 \documentclass[10pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
-\usepackage{amsmath}
+\usepackage{circledsteps}
 \input{AEDmacros}
 \usepackage{caratula} % Version modificada para usar las macros de algo1 de ~> https://github.com/bcardiff/dc-tex
 
@@ -108,7 +106,7 @@ se debe devolver una lista vacıa.
 	\vspace{0.2cm}
 	\pred{esMatrizCuadrada}{ s : \matriz{\ent}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego |s[i]| = |s|}}
 	\vspace*{0.2cm}
-	\pred{esCamino}{ distancias : \matriz{\ent}, c : \TLista{\ent}, d : \ent, h : \ent}{(esMatrizCuadrada(distancias) \land |c| \geq 2) \yLuego (|c| \geq 1)  \paraTodo[unalinea]{e}{\ent}{e \in c \implicaLuego 0 \leq c < |distancias| \land (c[0] = d \land c[|c|-1] = h) \land \paraTodo[unalinea]{i}{\ent}{ 0 \leq i < |c|-1 \implicaLuego distancias[c[i]][c[i+1]] > 0 }}}
+	\pred{esCamino}{ distancias : \matriz{\ent}, c : \TLista{\ent}, d : \ent, h : \ent}{(esMatrizCuadrada(distancias) \land |c| \geq 2) \yLuego  \paraTodo[unalinea]{e}{\ent}{e \in c \implicaLuego 0 \leq e < |distancias| \land (c[0] = d \land c[|c|-1] = h) \land \paraTodo[unalinea]{i}{\ent}{ 0 \leq i < |c|-1 \implicaLuego distancias[c[i]][c[i+1]] > 0 }}}
 \end{quote}
 \section{Resolucion de Ejercicios}
 \subsection{Especificacion}
@@ -140,7 +138,7 @@ se debe devolver una lista vacıa.
 	\textbf{Ejercicio 3:}
 	\begin{proc}{hayCamino}{\In distancias : \matriz{\ent}, \In desde : \ent, \In hasta : \ent}{\bool}
 		\requiere{esMatrizCuadrada(distancias) \land diagonalEnCeros(distancias) \land esMatrizSimetrica(distancias) \land distanciasValidas(distancias) \land ( 0 \leq desde < |distancias| \land 0 \leq hasta < |distancias|)}
-		\asegura{res = \True \longleftrightarrow \existe[unalinea]{c}{\TLista{\ent}}{esCamino (distancias, c, desde, hasta) \vee (distacias[desde][hasta] > 0)}}
+		\asegura{res = \True \longleftrightarrow \existe[unalinea]{c}{\TLista{\ent}}{esCamino (distancias, c, desde, hasta)}}
 	\end{proc}
 	\textbf{Ejercicio 4:} \\
 	\begin{proc}{cantidadDeCaminosNSaltos}{\Inout conexion : \matriz{\ent}, n : \ent}{}
@@ -148,9 +146,9 @@ se debe devolver una lista vacıa.
 		\asegura{\longitud{conexion} = \longitud{conexion_0} \yLuego \paraTodo[unalinea]{i}{\ent}{0 \leq i < \longitud{conexion_0} \implicaLuego \longitud{conexion[i]} = \longitud{conexion_0} \land esMatrizDeOrdenN(conexion,conexion_0,n)}}
 	\end{proc}
 	\vspace{0.2cm}
-	\pred{esMatrizConCerosYUnos}{conexion : \matriz{\ent}}{\paraTodo[unalinea]{i, j}{\ent}{0 \leq 0 < \longitud{conexion} \land i \leq j < \longitud{conexion[i]} \implicaLuego (conexion[i][j] = 0 \vee conexion[i][j] = 1)}}
+	\pred{esMatrizConCerosYUnos}{conexion : \matriz{\ent}}{\paraTodo[unalinea]{i, j}{\ent}{0 \leq i < \longitud{conexion} \land 0 \leq j < \longitud{conexion[i]} \implicaLuego (conexion[i][j] = 0 \vee conexion[i][j] = 1)}}
 	\vspace*{0.2cm}
-	\pred{esIdentidad}{m : \matriz{\ent}}{esMatrizCuadra \yLuego \paraTodo[unalinea]{i, j}{\ent}{0 \leq i < \longitud{m} \land 0 \leq j < \longitud{m[i]} \implicaLuego ((i = j \land m[i][j] = 1) \vee (i \neq j \land m[i][j] = 0))}}
+	\pred{esIdentidad}{m : \matriz{\ent}}{(esMatrizCuadra) \yLuego \paraTodo[unalinea]{i, j}{\ent}{0 \leq i < \longitud{m} \land 0 \leq j < \longitud{m[i]} \implicaLuego ((i = j \land m[i][j] = 1) \vee (i \neq j \land m[i][j] = 0))}}
 	\vspace*{0.2cm}
 	\pred{esProducto}{m : \matriz{\ent}, n : \matriz{\ent}, o : \matriz{\ent}, n : \ent}{\paraTodo[unalinea]{i, j}{\ent}{0 \leq i < \longitud{m} \land 0 \leq j < \longitud{m[i]} \implicaLuego m[i][j] = \sum_{k = 0}^{\longitud{n} -1} n[i][k] * o[k][j]}}
 	\vspace*{0.2cm}
@@ -162,20 +160,37 @@ se debe devolver una lista vacıa.
 	\end{proc}
 	\aux{distanciaRecorrida}{distancias : \matriz{\ent}, c : \TLista{\ent}}{\ent}{\sum_{i = 0}^{\longitud{c}-2}distancias[c[i]][c[i+1]]}
 \end{quote}
-\subsection{WP (Weakest Precondition)}
+\section{WP (Weakest Precondition)}
 \begin{quote}
  \textbf{Primer item:} 
  \\
  Para demostrar la correctitud de la implementación del programa con respecto a su especificación, debemos ver los siguientes puntos:
  \begin{quote}
  \begin{itemize}
- 	\item \textbf{P \implica $P_c$:} (La precondición de la especificación implica la precondición del ciclo.)
- 	\item \textbf{Correctitud parcial del ciclo} 
- 	\item \textbf{Terminación del Ciclo} 
+ 	\item 1. \textbf{Precondicion, guarda y postcondicion del ciclo}
+ 	\item 2. \textbf{P \implica $P_c$} $\Longleftrightarrow P_c \implica \text{Wp}(\text{res} := 0; \text{Wp}(i = 0, P_c))$(La precondición de la especificación implica la precondición del ciclo.)
+ 	\item 3. \textbf{Correctitud parcial del ciclo} 
+ 	\item 4. \textbf{Terminación del ciclo} 
  \end{itemize}
  \end{quote}
- 
-
+ \subsection{Precondicion, guarda y postcondicion del ciclo}
+ \textbf{Precondicion del ciclo:} \\ 
+ \vspace{0.2cm}
+ \textbf{$P_c$} $\equiv \{(P \land i = 0 \land res = 0)\}$ (Donde P es la precondicion de la especificacion).\\
+ \vspace{0.2cm}
+ \textbf{Guarda del ciclo:}\\ 
+ \vspace{0.2cm}
+ \textbf{B} $\equiv \{(i < \longitud{ciudades})\}$ \\
+ \vspace*{0.2cm}
+ \textbf{Postcondicion del ciclo:} \\
+ \vspace{0.2cm}
+ \textbf{$Q_c$} $\equiv \{(res = \sum_{i=0}^{\longitud{ciudades}-1}ciudades[i].habitantes)\} $ \\ 
+ \vspace{0.2cm}
+ Una vez definido la precondicion, guarda y postcondicion ahora veamos si P (la precondicion de la especificacion) implica la $P_c$ (la precondicion de ciclo) eso lo vamos a hacer calculando la Wp(res := 0 ; Wp(i :=, $P_c$))
+ \subsection{\textbf{$P \implica P_c$}}
+ \textbf{Calculo de la Wp(res := 0 ; Wp(i := 0, $P_c$)):} 
+ \\
+ llamemos \Circled{1} a Wp(i := 0, $P_c$) y \Circled{2} Wp(res := 0, \Circled{1}) (utilizo el aximo 1 de asignacion y axioma 2 )
  
 \end{quote}
 \end{document}

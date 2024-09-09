@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.8.29)  8 SEP 2024 18:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.8.29)  9 SEP 2024 19:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -23,20 +23,91 @@ File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
 )
-(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
-Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks17
-\inpenc@posthook=\toks18
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/circledsteps\circledste
+ps.sty
+Package: circledsteps 2023/08/11 v1.3.3 Circled steps that you can reference
+
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+)
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/pict2e\pict2e.sty
+Package: pict2e 2020/09/30 v0.4b Improved picture commands (HjG,RN,JT)
+
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/pict2e\pict2e.cfg
+File: pict2e.cfg 2016/02/05 v0.1u pict2e configuration for teTeX/TeXLive
+)
+Package pict2e Info: Driver file: pdftex.def on input line 112.
+Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 114.
+
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/pict2e\p2e-pdftex.def
+File: p2e-pdftex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
+)
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+\pIIe@GRAPH=\toks17
+\@arclen=\dimen141
+\@arcrad=\dimen142
+\pIIe@tempdima=\dimen143
+\pIIe@tempdimb=\dimen144
+\pIIe@tempdimc=\dimen145
+\pIIe@tempdimd=\dimen146
+\pIIe@tempdime=\dimen147
+\pIIe@tempdimf=\dimen148
+)
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/picture\picture.sty
+Package: picture 2020-04-22 v1.6 Dimens for picture macros (HO)
+Package picture Info: Calculation method: etex.
+)
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
+ty
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex
+\pgfkeys@pathtoks=\toks18
+\pgfkeys@temptoks=\toks19
+
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+libraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks20
+)))
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count195
+)
+\csteps@CBox=\box51
+\csteps@XLength=\skip50
+\csteps@YLength=\skip51
+\csteps@YDepth=\skip52
+\csteps@tmplen=\skip53
+\c@cstepcnt=\count196
+) (AEDmacros.tex
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2024/01/07 v24.1 The Babel package
-\babel@savecnt=\count195
-\U@D=\dimen141
+\babel@savecnt=\count197
+\U@D=\dimen149
 \l@unhyphenated=\language79
 
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count196
+\bbl@dirlevel=\count198
 
 *************************************
 * Local config file bblopts.cfg used
@@ -48,131 +119,50 @@ File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.l
 df
 Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
-\es@quottoks=\toks19
-\es@quotdepth=\count197
+\es@quottoks=\toks21
+\es@quotdepth=\count199
 Package babel Info: Making " an active character on input line 570.
 Package babel Info: Making . an active character on input line 675.
 Package babel Info: Making < an active character on input line 722.
 Package babel Info: Making > an active character on input line 722.
+Package babel Info: Making ' an active character on input line 740.
 ))
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/es\babel
 -spanish.tex
 Package babel Info: Importing font and identification data for spanish
 (babel)             from babel-es.ini. Reported on input line 11.
 )
-(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
-Package: amsmath 2023/05/13 v2.17o AMS math features
-\@mathmargin=\skip50
-
-For additional information on amsmath, use the `?' option.
-(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
-Package: amstext 2021/08/26 v2.01 AMS text
-
-(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks20
-\ex@=\dimen142
-))
-(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen143
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks22
+\inpenc@posthook=\toks23
 )
-(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
-Package: amsopn 2022/04/08 v2.04 operator names
-)
-\inf@bad=\count198
-LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count199
-\leftroot@=\count266
-LaTeX Info: Redefining \overline on input line 399.
-LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count267
-\DOTSCASE@=\count268
-LaTeX Info: Redefining \ldots on input line 496.
-LaTeX Info: Redefining \dots on input line 499.
-LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box51
-\strutbox@=\box52
-LaTeX Info: Redefining \big on input line 722.
-LaTeX Info: Redefining \Big on input line 723.
-LaTeX Info: Redefining \bigg on input line 724.
-LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen144
-LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count269
-LaTeX Info: Redefining \bmod on input line 905.
-LaTeX Info: Redefining \pmod on input line 910.
-LaTeX Info: Redefining \smash on input line 940.
-LaTeX Info: Redefining \relbar on input line 970.
-LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count270
-\dotsspace@=\muskip16
-\c@parentequation=\count271
-\dspbrk@lvl=\count272
-\tag@help=\toks21
-\row@=\count273
-\column@=\count274
-\maxfields@=\count275
-\andhelp@=\toks22
-\eqnshift@=\dimen145
-\alignsep@=\dimen146
-\tagshift@=\dimen147
-\tagwidth@=\dimen148
-\totwidth@=\dimen149
-\lineht@=\dimen150
-\@envbody=\toks23
-\multlinegap=\skip51
-\multlinetaggap=\skip52
-\mathdisplay@stack=\toks24
-LaTeX Info: Redefining \[ on input line 2953.
-LaTeX Info: Redefining \] on input line 2954.
-)
-(AEDmacros.tex
-
-! LaTeX Error: Option clash for package babel.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 \usepackage
-               [utf8]{inputenc}
-The package babel has already been loaded with options:
-  [spanish]
-There has now been an attempt to load it with options
-  [spanish,activeacute,es-tabla]
-Adding the global options:
-  spanish,spanish,activeacute,es-tabla
-to your \documentclass declaration may fix this.
-Try typing  <return>  to proceed.
-
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks25
+\KV@toks@=\toks24
 )
-\lst@mode=\count276
-\lst@gtempboxa=\box53
-\lst@token=\toks26
-\lst@length=\count277
-\lst@currlwidth=\dimen151
-\lst@column=\count278
-\lst@pos=\count279
-\lst@lostspace=\dimen152
-\lst@width=\dimen153
-\lst@newlines=\count280
-\lst@lineno=\count281
-\lst@maxwidth=\dimen154
+\lst@mode=\count266
+\lst@gtempboxa=\box52
+\lst@token=\toks25
+\lst@length=\count267
+\lst@currlwidth=\dimen150
+\lst@column=\count268
+\lst@pos=\count269
+\lst@lostspace=\dimen151
+\lst@width=\dimen152
+\lst@newlines=\count270
+\lst@lineno=\count271
+\lst@maxwidth=\dimen153
 
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count282
-\lst@skipnumbers=\count283
-\lst@framebox=\box54
+\c@lstnumber=\count272
+\lst@skipnumbers=\count273
+\lst@framebox=\box53
 )
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2023/02/27 1.9 listings configuration
@@ -190,30 +180,97 @@ Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen155
-\captionmargin=\dimen156
-\caption@leftmargin=\dimen157
-\caption@rightmargin=\dimen158
-\caption@width=\dimen159
-\caption@indent=\dimen160
-\caption@parindent=\dimen161
-\caption@hangindent=\dimen162
+\caption@tempdima=\dimen154
+\captionmargin=\dimen155
+\caption@leftmargin=\dimen156
+\caption@rightmargin=\dimen157
+\caption@width=\dimen158
+\caption@indent=\dimen159
+\caption@parindent=\dimen160
+\caption@hangindent=\dimen161
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count284
-\c@continuedfloat=\count285
+\c@caption@flags=\count274
+\c@continuedfloat=\count275
 Package caption Info: listings package is loaded.
 )
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count286
+\c@subfigure=\count276
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count287
+\c@subtable=\count277
+) (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip54
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks26
+\ex@=\dimen162
+))
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen163
+)
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count278
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count279
+\leftroot@=\count280
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count281
+\DOTSCASE@=\count282
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen164
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count283
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count284
+\dotsspace@=\muskip16
+\c@parentequation=\count285
+\dspbrk@lvl=\count286
+\tag@help=\toks27
+\row@=\count287
+\column@=\count288
+\maxfields@=\count289
+\andhelp@=\toks28
+\eqnshift@=\dimen165
+\alignsep@=\dimen166
+\tagshift@=\dimen167
+\tagwidth@=\dimen168
+\totwidth@=\dimen169
+\lineht@=\dimen170
+\@envbody=\toks29
+\multlinegap=\skip55
+\multlinetaggap=\skip56
+\mathdisplay@stack=\toks30
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
 )
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/changepage\changepage.s
 ty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
-\c@cp@cntr=\count288
-\cp@tempcnt=\count289
+\c@cp@cntr=\count290
+\cp@tempcnt=\count291
 )
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -224,33 +281,21 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count290
-\Gm@cntv=\count291
-\c@Gm@tempcnt=\count292
-\Gm@bindingoffset=\dimen163
-\Gm@wd@mp=\dimen164
-\Gm@odd@mp=\dimen165
-\Gm@even@mp=\dimen166
-\Gm@layoutwidth=\dimen167
-\Gm@layoutheight=\dimen168
-\Gm@layouthoffset=\dimen169
-\Gm@layoutvoffset=\dimen170
-\Gm@dimlist=\toks27
+\Gm@cnth=\count292
+\Gm@cntv=\count293
+\c@Gm@tempcnt=\count294
+\Gm@bindingoffset=\dimen171
+\Gm@wd@mp=\dimen172
+\Gm@odd@mp=\dimen173
+\Gm@even@mp=\dimen174
+\Gm@layoutwidth=\dimen175
+\Gm@layoutheight=\dimen176
+\Gm@layouthoffset=\dimen177
+\Gm@layoutvoffset=\dimen178
+\Gm@dimlist=\toks31
 
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
-(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
-Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
-
-(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 149.
-
-(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
-)
-(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
-) (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )) (caratula.sty
 Package: caratula 2013/08/04 v0.5 Para componer caratulas de TPs del DC
@@ -261,64 +306,87 @@ Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
-Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-)
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
 fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 )
-\Gin@req@height=\dimen171
-\Gin@req@width=\dimen172
+\Gin@req@height=\dimen179
+\Gin@req@width=\dimen180
 )
 Cargando package 'caratula' v0.5 (2013/08/04)
-\intlist=\toks28
-\intlistSinLU=\toks29
-\c@integrantesCount=\count293
-\intTabNombre=\toks30
-\intTabLU=\toks31
-\intTabEmail=\toks32
-\c@directoresCount=\count294
-\direcTabNombre=\toks33
-\direcTabEmail=\toks34
-\c@coDirectoresCount=\count295
-\codirecTabNombre=\toks35
-\codirecTabEmail=\toks36
+\intlist=\toks32
+\intlistSinLU=\toks33
+\c@integrantesCount=\count295
+\intTabNombre=\toks34
+\intTabLU=\toks35
+\intTabEmail=\toks36
+\c@directoresCount=\count296
+\direcTabNombre=\toks37
+\direcTabEmail=\toks38
+\c@coDirectoresCount=\count297
+\codirecTabNombre=\toks39
+\codirecTabEmail=\toks40
 )
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count296
-\l__pdf_internal_box=\box55
+\l__color_backend_stack_int=\count298
+\l__pdf_internal_box=\box56
 ) (TP- Algo 1.aux
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
 )
 \openout1 = `"TP- Algo 1.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Info: Redefining \. on input line 23.
-LaTeX Info: Redefining \% on input line 23.
-\c@lstlisting=\count297
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count299
+\scratchdimen=\dimen181
+\scratchbox=\box57
+\nofMPsegments=\count300
+\nofMParguments=\count301
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count302
+\MPscratchDim=\dimen182
+\MPnumerator=\count303
+\makeMPintoPDFobject=\count304
+\everyMPtoPDFconversion=\toks42
+)
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+LaTeX Info: Redefining \. on input line 21.
+LaTeX Info: Redefining \% on input line 21.
+\c@lstlisting=\count305
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
-\caption@adjustwidth@hsize=\dimen173
-\caption@adjustwidth@linewidth=\dimen174
+\caption@adjustwidth@hsize=\dimen183
+\caption@adjustwidth@linewidth=\dimen184
 Package caption Info: End \AtBeginDocument code.
 
 *geometry* driver: auto-detecting
@@ -355,49 +423,23 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-
-(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
-ii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count298
-\scratchdimen=\dimen175
-\scratchbox=\box56
-\nofMPsegments=\count299
-\nofMParguments=\count300
-\everyMPshowfont=\toks37
-\MPscratchCnt=\count301
-\MPscratchDim=\dimen176
-\MPnumerator=\count302
-\makeMPintoPDFobject=\count303
-\everyMPtoPDFconversion=\toks38
-)
-(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
-ase.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
-fg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-))
 <logo_dc.jpg, id=1, 215.6055pt x 83.5923pt>
 File: logo_dc.jpg Graphic file (type jpg)
 <use logo_dc.jpg>
-Package pdftex.def Info: logo_dc.jpg  used on input line 25.
+Package pdftex.def Info: logo_dc.jpg  used on input line 23.
 (pdftex.def)             Requested size: 215.60497pt x 83.59207pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--25
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
 
  []
 
 <logo_uba.jpg, id=2, 225.4824pt x 231.7458pt>
 File: logo_uba.jpg Graphic file (type jpg)
 <use logo_uba.jpg>
-Package pdftex.def Info: logo_uba.jpg  used on input line 25.
+Package pdftex.def Info: logo_uba.jpg  used on input line 23.
 (pdftex.def)             Requested size: 225.48184pt x 231.74522pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--25
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
 
  []
 
@@ -406,12 +448,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--25
 {C:/Users/rubia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./logo_dc.jp
 g> <./logo_uba.jpg>]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 5
-2.
+0.
 
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
-Overfull \hbox (22.34435pt too wide) in paragraph at lines 31--76
+Overfull \hbox (22.34435pt too wide) in paragraph at lines 29--74
  \OT1/cmr/bx/n/10 proc su-ma-DeHa-bi-tan-tes \OT1/cmr/m/n/10 (\OT1/cmss/m/n/10 
 in \OT1/cmr/m/n/10 me-no-res-De-Ciu-da-des: $\OML/cmm/m/it/10 seq\OMS/cmsy/m/n/
 10 h\OML/cmm/m/it/10 Ciudad\OMS/cmsy/m/n/10 i$\OT1/cmr/m/n/10 , \OT1/cmss/m/n/1
@@ -421,25 +463,25 @@ n/10 h\OML/cmm/m/it/10 Ciudad\OMS/cmsy/m/n/10 i$\OT1/cmr/m/n/10 ) : $\OML/cmm/m
  []
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 81.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 79.
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 8
-2.
+0.
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
 File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 82.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 80.
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 8
-9.
+7.
 
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
 File: omlcmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 89.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 87.
 
 [1]
-Overfull \hbox (18.83882pt too wide) in paragraph at lines 120--120
+Overfull \hbox (18.83882pt too wide) in paragraph at lines 118--118
  []\OT1/cmtt/m/n/10 asegura \OMS/cmsy/m/n/10 f$j\OML/cmm/m/it/10 res\OMS/cmsy/m
 /n/10 j \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 cantidadCiudadesGrandes\OT1/cmr/m/n/
 10 (\OML/cmm/m/it/10 ciudades\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it
@@ -450,7 +492,7 @@ S/cmsy/m/n/10 2
  []
 
 
-Overfull \hbox (9.74336pt too wide) in paragraph at lines 127--127
+Overfull \hbox (9.74336pt too wide) in paragraph at lines 125--125
 \OT1/cmtt/m/n/10 aux cantidadCiudadesGrandes \OT1/cmr/m/n/10 ( ciu-da-des :$\OM
 L/cmm/m/it/10 seq\OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 Ciudad\OMS/cmsy/m/n/10 i$\O
 T1/cmr/m/n/10 ) : $\U/dsrom/m/n/10 Z$ \OT1/cmr/m/n/10 = $[][] []$\OT1/cmr/bx/n/
@@ -458,7 +500,7 @@ T1/cmr/m/n/10 ) : $\U/dsrom/m/n/10 Z$ \OT1/cmr/m/n/10 = $[][] []$\OT1/cmr/bx/n/
  []
 
 
-Overfull \hbox (3.75832pt too wide) in paragraph at lines 130--130
+Overfull \hbox (3.75832pt too wide) in paragraph at lines 128--128
 \OT1/cmtt/m/n/10 proc sumaDeHabitantes \OT1/cmr/m/n/10 (\OT1/cmss/m/n/10 in \OT
 1/cmr/m/n/10 me-no-res-De-Ciu-da-des : $\OML/cmm/m/it/10 seq\OMS/cmsy/m/n/10 h\
 OML/cmm/m/it/10 Ciudad\OMS/cmsy/m/n/10 i$\OT1/cmr/m/n/10 , \OT1/cmss/m/n/10 in 
@@ -468,12 +510,12 @@ seq\OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 Ciudad\OMS/cmsy/m/n/10 i$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--130
+Underfull \hbox (badness 10000) in paragraph at lines 128--128
 
  []
 
 [2]
-Overfull \hbox (23.4929pt too wide) in paragraph at lines 142--142
+Overfull \hbox (23.4929pt too wide) in paragraph at lines 140--140
  []\OT1/cmtt/m/n/10 requiere \OMS/cmsy/m/n/10 f$\OML/cmm/m/it/10 esMatrizCuadra
 da\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 distancias\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/1
 0 ^ \OML/cmm/m/it/10 diagonalEnCeros\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 distancia
@@ -482,29 +524,17 @@ r/m/n/10 (\OML/cmm/m/it/10 distancias\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^
  []
 
 
-Overfull \hbox (1.35493pt too wide) in paragraph at lines 143--143
- []\OT1/cmtt/m/n/10 asegura \OMS/cmsy/m/n/10 f$\OML/cmm/m/it/10 res \OT1/cmr/m/
-n/10 = [] \OMS/cmsy/m/n/10  []! \OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 9\OML/cmm/m/i
-t/10 c \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 seq\OMS/cmsy/m/n/10 h\U/dsrom/m/n/10 
-Z\OMS/cmsy/m/n/10 i\OT1/cmr/m/n/10 ) (\OML/cmm/m/it/10 esCamino\OT1/cmr/m/n/10 
-(\OML/cmm/m/it/10 distancias; c; desde; hasta\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10
- _ \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 distacias\OT1/cmr/m/n/10 [\OML/cmm/m/it/10
- desde\OT1/cmr/m/n/10 ][\OML/cmm/m/it/10 hasta\OT1/cmr/m/n/10 ] \OML/cmm/m/it/1
-0 >
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
 
-Overfull \hbox (27.3818pt too wide) in paragraph at lines 160--160
+Overfull \hbox (27.3818pt too wide) in paragraph at lines 158--158
  []\OT1/cmtt/m/n/10 requiere \OMS/cmsy/m/n/10 f$\OT1/cmr/m/n/10 (\OML/cmm/m/it/
 10 diagonalEnCeros\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 distancias\OT1/cmr/m/n/10 )
  \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 esMatrizCuadrada\OT1/cmr/m/n/10 (\OML/cmm/
@@ -514,7 +544,7 @@ sy/m/n/10 ^
  []
 
 
-Overfull \hbox (26.93109pt too wide) in paragraph at lines 161--161
+Overfull \hbox (26.93109pt too wide) in paragraph at lines 159--159
  \OML/cmm/m/it/10 distanciaRecorrida\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 distancia
 s; c\OT1/cmr/m/n/10 ))) \OMS/cmsy/m/n/10 _ \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 re
 s \OT1/cmr/m/n/10 = [ ]) \OMS/cmsy/m/n/10  []! :\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/
@@ -524,9 +554,9 @@ s \OT1/cmr/m/n/10 = [ ]) \OMS/cmsy/m/n/10  []! :\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/
  ))$\OMS/cmsy/m/n/10 g 
  []
 
-[3] (TP- Algo 1.aux
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
+[3] [4] (TP- Algo 1.aux
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
 )
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -534,34 +564,36 @@ L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 7651 strings out of 474485
- 123767 string characters out of 5743734
+ 9204 strings out of 474485
+ 151728 string characters out of 5743734
  1968542 words of memory out of 5000000
- 29869 multiletter control sequences out of 15000+600000
- 562338 words of font info for 53 fonts, out of 8000000 for 9000
+ 31379 multiletter control sequences out of 15000+600000
+ 566645 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,8n,80p,431b,1411s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,8n,80p,1337b,1409s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\rubia\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk><C:/Users/rubia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/rubia/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb><C:/Users/rubia/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/rubia/AppData/Local/Programs/MiKTe
 X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/rubia/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/rubia/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/rubia/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/r
-ubia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/
-Users/rubia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.p
-fb><C:/Users/rubia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmss10.pfb><C:/Users/rubia/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmssbx10.pfb><C:/Users/rubia/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb><C:/Users/rubia/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/rubia/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/rubia/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb>
-Output written on "TP- Algo 1.pdf" (4 pages, 565669 bytes).
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/rubia/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/rubia/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/
+rubia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
+:/Users/rubia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb><C:/Users/rubia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmr5.pfb><C:/Users/rubia/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr7.pfb><C:/Users/rubia/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmss10.pfb><C:/Users/rubia/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/rubia/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/rubia/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/rubia/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/rub
+ia/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb>
+Output written on "TP- Algo 1.pdf" (5 pages, 587280 bytes).
 PDF statistics:
- 99 PDF objects out of 1000 (max. 8388607)
+ 112 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
