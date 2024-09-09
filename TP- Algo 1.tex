@@ -25,53 +25,40 @@
 \subsection{Especficiacion}
 
 \begin{quote}
-\vspace{0.2cm}
-\textbf{1. grandesCiudades} A partir de una lista de ciudades, devuelve aquellas que tienen m´as de 50.000 habitantes.
-\textbf {proc  grandesCiudades} (\In ciudades: \TLista{Ciudad}) : \TLista{Ciudad}
-\vspace{0.2cm}
-\\
-\vspace{0.2cm}
-\textbf{2. sumaDeHabitantes:} Por cuestiones de planificacion urbana, las ciudades registran sus habitantes mayores de edad
-por un lado y menores de edad por el otro. Dadas dos listas de ciudades del mismo largo con los mismos nombres, una
-con sus habitantes mayores y otra con sus habitantes menores, este procedimiento debe devolver una lista de ciudades
-con la cantidad total de sus habitantes.
-\\
-\vspace{0.2cm}
-\textbf {proc sumaDeHabitantes} (\In menoresDeCiudades: \TLista{Ciudad}, \In mayoresDeCiudades: \TLista{Ciudad}) : \TLista{Ciudad}
-\\
-\vspace{0.2cm}
-\textbf{3. hayCamino:} Un mapa de ciudades esta conformada por ciudades y caminos que unen a algunas de ellas. A partir de
-este mapa, podemos definir las distancias entre ciudades como una matriz donde cada celda i, j representa la distancia
-entre la ciudad i y la ciudad j (Fig. 2). Una distancia de 0 equivale a no haber camino entre i y j. Notar que la distancia
-de una ciudad hacia s´ı misma es cero y la distancia entre A y B es la misma que entre B y A.
-\vspace{0.2cm}
-\\ 
-\vspace{0.2cm}
-\textbf{proc hayCamino} o (\In distancias: \matriz{\ent}, \In desde: \ent, \In hasta: \ent) : \bool
-\vspace{0.2cm}
-\\
-\vspace{0.2cm}
-\textbf{4. cantidadCaminosNSaltos:} Dentro del contexto de redes informaticas, nos interesa contar la cantidad de “saltos”
-que realizan los paquetes de datos, donde un salto se define como pasar por un nodo.
-Ası como definimos la matriz de distancias, podemos definir la matriz de conexion entre nodos, donde cada celda i, j
-tiene un 1 si hay un unico camino a un salto de distancia entre el nodo i y el nodo j, y un 0 en caso contrario. En este
-caso, se trata de una matriz de conexion de orden 1, ya que indica cu´ales pares de nodos poseen 1 camino entre ellos a
-1 salto de distancia.
-Dada la matriz de conexion de orden 1, este procedimineto debe obtener aquella de orden n que indica cuantos caminos
-de n saltos hay entre los distintos nodos. Notar que la multiplicacion de una matriz de conexion de orden 1 consigo
-misma nos da la matriz de conexion de orden 2, y ası sucesivamente.4
-\\
-\vspace{0.2cm}
-\textbf{proc cantidadNSaltos } s (\Inout conexion: \matriz{\ent}, \In n: \ent)
-\vspace{0.2cm}
-\\
-\vspace{0.2cm}
-\textbf{5. caminoMınimo:} caminoMınimo: Dada una matriz de distancias, una ciudad de origen y una ciudad de destino, este procedimiento
-debe devolver la lista de ciudades que conforman el camino mas corto entre ambas. En caso de no existir un camino,
-se debe devolver una lista vacıa.
-\\
-\textbf{proc caminoMinimo} (in origen: \ent, in destino: \ent, in distancias: seq⟨seq⟨\ent⟩⟩) : seq⟨\ent⟩
-\end {quote}
+	\vspace{0.2cm}
+	\textbf{1. grandesCiudades:} A partir de una lista de ciudades, devuelve aquellas que tienen más de 50.000 habitantes.  
+	\textbf{proc grandesCiudades} (\In ciudades: \TLista{Ciudad}) : \TLista{Ciudad}
+	\vspace{0.2cm}
+	\\
+	\vspace{0.2cm}
+	\textbf{2. sumaDeHabitantes:} Por cuestiones de planificación urbana, las ciudades registran sus habitantes mayores de edad por un lado y menores de edad por el otro. Dadas dos listas de ciudades del mismo largo con los mismos nombres, una con sus habitantes mayores y otra con sus habitantes menores, este procedimiento debe devolver una lista de ciudades con la cantidad total de sus habitantes.
+	\\
+	\vspace{0.2cm}
+	\textbf{proc sumaDeHabitantes} (\In menoresDeCiudades: \TLista{Ciudad}, \In mayoresDeCiudades: \TLista{Ciudad}) : \TLista{Ciudad}
+	\\
+	\vspace{0.2cm}
+	\textbf{3. hayCamino:} Un mapa de ciudades está conformado por ciudades y caminos que unen a algunas de ellas. A partir de este mapa, podemos definir las distancias entre ciudades como una matriz donde cada celda i, j representa la distancia entre la ciudad i y la ciudad i (Fig. 2). Una distancia de 0 equivale a no haber camino entre i y i. Notar que la distancia de una ciudad hacia sí misma es cero y la distancia entre A y B es la misma que entre B y A.
+	\vspace{0.2cm}
+	\\
+	\vspace{0.2cm}
+	\textbf{proc hayCamino} (\In distancias: \matriz{\ent}, \In desde: \ent, \In hasta: \ent) : \bool
+	\vspace{0.2cm}
+	\\
+	\vspace{0.2cm}
+	\textbf{4. cantidadCaminosNSaltos:} Dentro del contexto de redes informáticas, nos interesa contar la cantidad de “saltos” que realizan los paquetes de datos, donde un salto se define como pasar por un nodo.  
+	Así como definimos la matriz de distancias, podemos definir la matriz de conexión entre nodos, donde cada celda i, j tiene un 1 si hay un único camino a un salto de distancia entre el nodo i y el nodo i, y un 0 en caso contrario. En este caso, se trata de una matriz de conexión de orden 1, ya que indica cuáles pares de nodos poseen 1 camino entre ellos a 1 salto de distancia.  
+	Dada la matriz de conexión de orden 1, este procedimiento debe obtener aquella de orden n que indica cuántos caminos de n saltos hay entre los distintos nodos. Notar que la multiplicación de una matriz de conexión de orden 1 consigo misma nos da la matriz de conexión de orden 2, y así sucesivamente.
+	\\
+	\vspace{0.2cm}
+	\textbf{proc cantidadNSaltos} (\Inout conexion: \matriz{\ent}, \In n: \ent)
+	\vspace{0.2cm}
+	\\
+	\vspace{0.2cm}
+	\textbf{5. caminoMínimo:} Dada una matriz de distancias, una ciudad de origen y una ciudad de destino, este procedimiento debe devolver la lista de ciudades que conforman el camino más corto entre ambas. En caso de no existir un camino, se debe devolver una lista vacía.
+	\\
+	\textbf{proc caminoMinimo} (\In origen: \ent, \In destino: \ent, \In distancias: seq⟨seq⟨\ent⟩⟩) : seq⟨\ent⟩
+\end{quote}
+
 \subsection{WP (Weakest Precondiction)}
 \begin{quote}
 	La funcion poblacionTotal recibe una lista de ciudades donde al menos una de ellas es grande (es decir, supera los
@@ -188,9 +175,25 @@ se debe devolver una lista vacıa.
  \vspace{0.2cm}
  Una vez definido la precondicion, guarda y postcondicion ahora veamos si P (la precondicion de la especificacion) implica la $P_c$ (la precondicion de ciclo) eso lo vamos a hacer calculando la Wp(res := 0 ; Wp(i :=, $P_c$))
  \subsection{\textbf{$P \implica P_c$}}
- \textbf{Calculo de la Wp(res := 0 ; Wp(i := 0, $P_c$)):} 
- \\
- llamemos \Circled{1} a Wp(i := 0, $P_c$) y \Circled{2} Wp(res := 0, \Circled{1}) (utilizo el aximo 1 de asignacion y axioma 2 )
+ \textbf{Cálculo de la Wp(res := 0 ; Wp(i := 0, $P_c$)):} \\[0.2cm]
+ llamemos \Circled{1} a Wp(i := 0, $P_c$) y \Circled{2} Wp(res := 0, \Circled{1}) (utilizo el axioma 3) \\[0.2cm]
+ \textbf{Calculamos \Circled{1}:} \\[0.2cm]
+ $Wp(i := 0, P_c)$ $\equiv(def(i) \land P \land 0 = 0 \land res = 0)$ $\equiv (P \land \True \land res = 0)$ $\equiv (P \land res = 0)$ \\[0.2cm]
+ Una vez calculado \Circled{1} lo reemplazamos en \Circled{2} y nos queda $Wp(res := 0, P \land res = 0)$ \\[0.2cm]
+ \textbf{Calculamos \Circled{2}} \\[0.2cm]
+ $Wp(res := 0, P \land res = 0)$ $\equiv (def(res) \yLuego P \land 0 = 0)$ $\equiv (P \land \True)$ $\equiv P$ \\[0.2cm]
+ Por lo tanto, como Wp(res := 0; Wp(i := 0, $P_c$)) $\equiv P$, podemos concluir que $P \implica P_c$. El siguiente paso en la demostración de correctitud consiste en verificar si el ciclo es parcialmente correcto. Para ello, aplicaremos el teorema del invariante, el cual nos permitirá demostrar que una propiedad invariante se mantiene a lo largo de cada iteración del ciclo, garantizando así la correctitud parcial. 
+ \subsection{Correctitud parcial del ciclo mediante teorema del invariante}
+ Para demostrar la correctitud parcial del ciclo nesecitamos declarar el invariante, el cual explicado en palabras va a consistir en mantener a i en un rango adecuado para evitar la indefinicion y que res sea la suma hasta cierto i \\ [0.2cm]
+ \textbf{Obs:} el invariante debe valer antes de cada iteracion y al finalizar cada iteracion.\\ [0.2cm] 
+ \textbf{Sea \(I\) el invariante definido de la siguente manera:} \\ [0.1cm]
+ \textbf{I} $\equiv(0 \leq i \leq \longitud{ciudades} \land res = \sum_{j=0}^{i-1}ciudades[j].habitantes)$ \\ [0.2cm] 
+ Los siguientes axiomas son los que se deben corroborar para verificar que el ciclo es paracialmente correcto:
+\begin{itemize}
+ \item \Circled{1}. $P_c \implica I$
+ \item \Circled{2}. $\{I \land B\} S \{I\}$
+ \item \Circled{3}. $\{I \land \neg B\} \implica Q_c$
+ \end{itemize}
  
 \end{quote}
 \end{document}
