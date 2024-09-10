@@ -194,72 +194,113 @@
  \item \Circled{2}. $\{I \land B\} S \{I\}$
  \item \Circled{3}. $\{I \land \neg B\} \implica Q_c$
  \end{itemize}
- \textbf{\Circled{1}. $P_c \implica I$} (La precondicion del ciclo implica a el invariante) \\ [0.1cm]
- Entonces tenemos que $(P \land res = 0 \land i = 0) \implica (i \leq i \leq \longitud{ciudades} \land res = \sum_{j=0}^{i-1}ciudades[j].habitantes)$ pero como $i = 0 \implica 0 \leq i \leq \longitud{ciudades}$. Ademas como consecuencia $res = \sum_{j=0}^{0-1}ciuadades[j].habitantes = \sum_{j=0}^{-1}ciuadades[j].habitantes = 0$ por lo tanto queda desmotrado que $P_c \implica I$. \\ [0.2cm]
- \textbf{\Circled{2}. $\{I \land B\} S \{I\} \longleftrightarrow (\{I \land B\} \implica Wp(S_c,I))$  } \\ [0.2cm]
- Caculemos el $Wp(S_c,I)$ (Donde $S_c$ es el cuerpo del ciclo) por lo tanto por aximo 3 seria equivalente calcular el $Wp(res := ciudades[i].habitantes, Wp(i := i + 1, I))$. \\
- Llamamos \Circled{A} a $Wp(i := i + 1, I)$ y \Circled{B} $Wp(res := res + ciudades[i.habitantes], \Circled{A})$ \\ [0.1cm]
- \textbf {Calculo de \Circled{A}:} \\ [0.1cm]
- $Wp(i := i + 1, I) \equiv (def(i) \yLuego (0 \leq i + 1 \leq \longitud{ciudades} \land res = \sum_{j=0}^{(i+1)-1}ciudades[j].habitantes)) \equiv (0 \leq i + 1 \leq \longitud{ciudades} \land res = \sum_{j=0}^{i}ciuades[j].habitantes)$. \\ [0.1cm]
- Una vez calculado \Circled{A} remplazamos en \Circled{B} y queda de la siguiente manera $Wp(res := res + ciuadades[j].habitantes, 0 \leq i + 1 \leq \longitud{ciudades} \land res = \sum_{j=0}^{i}ciudades[j].habitantes)$ \\ [0.1cm]
- \textbf {Calculo de \Circled{B}:} \\ [0.1cm]
- $Wp(res := res + ciuadades[j].habitantes, 0 \leq i + 1 \leq \longitud{ciudades} \land res = \sum_{j=0}^{i}ciudades[j].habitantes) \equiv ((def(i) \land def(ciudades) \land 0 \leq i < \longitud{ciudades}) \yLuego (0 \leq i + 1 \leq \longitud{ciudades} \land res + ciudades[i].habitantes = \sum_{j=0}^{i}ciuadades[j].habitantes))$ ahora me fijo que puedo comprimir los rango y restar ciudades[i].habitantes a la sumatoria que seria el ultimo termino. Entonces me queda de la siguiente manera: \\ [0.1cm]
- $Wp(res := res + ciudades[i].habitantes, \Circled{A}) \equiv (0 \leq i < \longitud{ciuadades} \land res = \sum_{j=0}^{i-1}ciudades[j].habitantes)$. \\ [0.1cm]
- Ahora veamos si vale que $\{I \land B\} \implica Wp(S_c,I)$ \\ 
- Donde $\{I \land B\} \equiv (0 \leq i \leq \longitud{ciudades} \land res = \sum_{j=0}^{i -1}ciudades[j].habitantes \land i < \longitud{ciudades} )$ comprimo el rango de i y me queda lo siguente $(0 \leq i < \longitud{ciudades} \land res = \sum_{j=0}^{i -1}ciudades[j].habitantes)$. Como $\{I \land B\} \equiv Wp(S_c,I)$ \vspace*{0.2cm}  entonces vale la implicacion y la tripla de Hoare es valida. \\ [0.2cm]
+ \textbf{\Circled{1}. $P_c \implica I$} (La precondición del ciclo implica el invariante) \\ [0.1cm]
+ Entonces, tenemos que $(P \land res = 0 \land i = 0) \implica (0 \leq i \leq \longitud{ciudades} \land res = \sum_{j=0}^{i-1}ciudades[j].habitantes)$. Como $i = 0$, se cumple que $0 \leq i \leq \longitud{ciudades}$. Además, como consecuencia, $res = \sum_{j=0}^{0-1}ciudades[j].habitantes = \sum_{j=0}^{-1}ciudades[j].habitantes = 0$. Por lo tanto, queda demostrado que $P_c \implica I$.\\ [0.2cm] 
+ \textbf{\Circled{2}. $\{I \land B\} S \{I\} \longleftrightarrow (\{I \land B\} \implica Wp(S_c, I))$} \\ [0.2cm]
+ Calculemos el $Wp(S_c, I)$ (donde $S_c$ es el cuerpo del ciclo). Por lo tanto, según el axioma 3, sería equivalente calcular $Wp(res := res + ciudades[i].habitantes, Wp(i := i + 1, I))$. \\
+ 
+ Llamemos \Circled{A} a $Wp(i := i + 1, I)$ y \Circled{B} a $Wp(res := res + ciudades[i].habitantes, \Circled{A})$. \\ [0.1cm]
+ 
+ \textbf{Cálculo de \Circled{A}:} \\ [0.1cm]
+ $Wp(i := i + 1, I) \equiv (def(i) \land (0 \leq i + 1 \leq \longitud{ciudades} \land res = \sum_{j=0}^{(i+1)-1}ciudades[j].habitantes)) \equiv (0 \leq i + 1 \leq \longitud{ciudades} \land res = \sum_{j=0}^{i}ciudades[j].habitantes)$. \\ [0.1cm]
+ 
+ Una vez calculado \Circled{A}, reemplazamos en \Circled{B}, que queda de la siguiente manera: $Wp(res := res + ciudades[i].habitantes, 0 \leq i + 1 \leq \longitud{ciudades} \land res = \sum_{j=0}^{i}ciudades[j].habitantes)$. \\ [0.1cm]
+ 
+ \textbf{Cálculo de \Circled{B}:} \\ [0.1cm]
+ $Wp(res := res + ciudades[i].habitantes, 0 \leq i + 1 \leq \longitud{ciudades} \land res = \sum_{j=0}^{i}ciudades[j].habitantes) \equiv ((def(i) \land def(ciudades) \land 0 \leq i < \longitud{ciudades}) \land (0 \leq i + 1 \leq \longitud{ciudades} \land res + ciudades[i].habitantes = \sum_{j=0}^{i}ciudades[j].habitantes))$. 
+ 
+ Ahora, podemos comprimir el rango y restar $ciudades[i].habitantes$ de la sumatoria, que sería el último término. Entonces, obtenemos: \\ [0.1cm]
+ 
+ $Wp(res := res + ciudades[i].habitantes, \Circled{A}) \equiv (0 \leq i < \longitud{ciudades} \land res = \sum_{j=0}^{i-1}ciudades[j].habitantes)$. \\ [0.1cm]
+ 
+ Ahora, veamos si $\{I \land B\} \implica Wp(S_c, I)$. Donde $\{I \land B\} \equiv (0 \leq i \leq \longitud{ciudades} \land res = \sum_{j=0}^{i -1}ciudades[j].habitantes \land i < \longitud{ciudades})$. Comprimimos el rango de $i$ y obtenemos $(0 \leq i < \longitud{ciudades} \land res = \sum_{j=0}^{i -1}ciudades[j].habitantes)$. Como $\{I \land B\} \equiv Wp(S_c, I)$, entonces la implicación es válida y la tripla de Hoare es correcta. \\ [0.2cm]
+ 
  \textbf{\Circled{3}. $\{I \land \neg B\} \implica Q_c$} \\ [0.2cm]
  primero que nada definamos $\{I \land \neg B\}$ \\ 
  $\{I \land \neg B\} \equiv (0 \leq i \leq \longitud{ciudades} \land res = \sum_{j=0}^{i-1}ciudades[j].habitantes \land i \geq \longitud{ciudades})$ (como i es mayor o igual que la longitud de ciudades y menor o igual a la vez me queda lo siguente) \\ [0.1cm]
  $\equiv ( i = \longitud{ciudades} \land res = \sum_{j=0}^{\longitud{ciudades}-1}ciudades[j].habitantes) \equiv Q_c$ \\ [0.1cm]
 Por lo tanto queda desmotrado que $\{I \land \neg B\} \implica Q_c$ y como consecuencia el ciclo resulta parcialmente correcto. \\
 Ahora lo siguiente es verificar que el ciclo termina mediante el teorema de la terminacion. 
-\subsection{Terminacion del ciclo (mediante teroema de la terminacion).}
- Para verificar que el ciclo concluye debemos verificar los siguientes axiomas del teorema: 
- \begin{itemize}
- 	\item \textbf{\Circled{4}. $\{I \land B \land f_v = v_0\} S \{f_v < v_0\}$}
- 	\item \textbf{\Circled{5}. $\{I \land f_v \leq 0\} \implica \neg B$} 
- \end{itemize}
- Aclaraciones: $f_v$ es la funcion variante la cual se define como $f_v = (\longitud{ciudades} - i).$ ya que tiene que ser un funcion decreciente y como longitud de ciudades es constante e i crece con cada iteracion me da como resultado una funcion decreciente. \\ [0.2cm] 
- Para ejemplificar supongamos ciudades = [("Buenos Aires",30000),("Santa Rosa",15000),("Rosario,25000),("Jujuy",20000)] con la siguiente tabla: \\ [0.2cm]
- \begin{table}[h!]
- 	\centering
- 	\begin{tabular}{||l c c r||} 
- 		\hline
- 		Iteracion & i & res & $f_v$ \\ [0.5ex] 
- 		\hline\hline
- 		0 & 0 & 0 & 4 \\ 
- 		1 & 1 & 30000 & 3 \\
- 		2 & 2 & 45000 & 2 \\
- 		3 & 3 & 70000 & 1 \\
- 		4 & 4 & 90000 & 0 \\
- 		\hline
- 	\end{tabular}
- 	\caption{visualizacion.}
- 	\label{tab:ejemplo}
- \end{table} \\ 
- Ya cuando i = 4 la guarda $B \equiv (i < \longitud{ciudades})$ no se cumple, sale del ciclo y se cumple que $f_v \leq 0$. \\ [0.2cm]
- \textbf{\Circled{4}. $\{I \land B \land f_v = v_0\} S \{f_v < v_0\}$} 
- primero definamos $\{I \land B \land f_v = v_0\}$ \\ [0.1cm]
- $\{I \land B \land f_v = v_0\} \equiv (0 \leq i \leq \longitud{ciudades} \land res = \sum_{j=0}^{i-1}ciudades[j].habitantes \land i < \longitud{ciudades} \land v_0 = \longitud{ciudades}-i)$  \\ 
- $\equiv(0 \leq i < \longitud{ciudades} \land res = \sum_{j=0}^{i-1}(ciudades[j].habitantes) \land v_0 = \longitud{ciudades}-i)$ {(comprimi los rangos de i).} \\ [0.1cm]
- Ahora lo que debemos hacer para probar que la tripla de Hoare es valida: \\
- $\{I \land B \land f_v = v_0\} \implica Wp(res := res + ciudades[i].habitantes, Wp(i := i + 1, \longitud{ciudades}-i < v_0))$ \\
- (utilice axioma 3 de WP). \\ [0.1cm]
- Llamamo \Circled{1} a $Wp(i := i + 1, \longitud{ciudades}-i < v_0))$ y \Circled{2} a $Wp(res := res + ciudades[i].habitantes, \Circled{1}$ \\ [0.2cm]
- \textbf{Calculamos \Circled{1}} \\
- $Wp(i := i + 1, \longitud{ciudades}-i < v_0)) \equiv (def(i) \yLuego \longitud{ciudades} -(i+1) < v_0) \equiv$ \\ 
- $(\longitud{ciudades} - i - 1 < v_0)$. \\ 
- Ahora remplazamos el valor calculado de \Circled{1} en \Circled{2} y queda $Wp(res := res + ciudades[i].habitantes, \longitud{ciudades} - i - 1 < v_0)$ \\ [0.1cm]
- \textbf{Calculamos \Circled{2}} \\ [0.2cm]
- $Wp(res := res + ciudades[i].habitantes, \longitud{ciudades} - i - 1 < v_0) \equiv \\ (def(i) \land def(res) \land def(ciudades) \land 0 \leq i < \longitud{ciudades} \yLuego \longitud{ciudades} - i - 1 < v_0) \equiv \\ (0 \leq i < \longitud{ciudades} \land \longitud{ciudades} - i - 1 < v_0)$ \\ [0.2cm] 
- Entonces veamos si $\{I \land B \land f_v = v_0\} \implica Wp(S_c,f_v < v_0)$.  
- Y claramente si ya que $v_0 = \longitud{ciudades} - i$ y yo se que $v_0 > \longitud{ciudades} - i - 1$ por lo tanto $\longitud{ciudades} - i > \longitud{ciudades} - i - 1$ luego con operaciones aritmeticas trabajo la dsesigualda y llego a ($0 > -1$) y esos es simpre verdadero. \\ 
- 
- \textbf{\Circled{5}. $\{I \land f_v \leq 0\} \implica \neg B$} \\ [0.2cm]
- Primero definimos $\{I \land f_v \leq 0\}$: \\ 
- $\{I \land f_v \leq 0\} \equiv (0 \leq i \leq \longitud{ciudades} \land res = \sum_{j=0}^{i-1}(ciudades[j].habitantes) \land \longitud{ciudades} \leq i) \equiv$
- \space $(i = \longitud{ciudades} \land \sum_{j=0}^{\longitud{ciudades}-1}(ciudades[j].habitantes))$ \\ [0.1cm]
- Y desarrollando la $\neg B \equiv (i \geq \longitud{ciudades})$ entonces tenemos que si $(i = \longitud{ciudades}) \implica (i \geq \longitud{ciudades})$. \\ [0.5cm]
- En conclusión, la correctitud de la implementación del programa ha sido demostrada mediante todo lo detallado anteriormente. Además, se ha comprobado que el ciclo es parcialmente correcto utilizando el teorema del invariante y que termina en una cantidad finita de pasos aplicando el teorema de la terminación
+\subsection{Terminación del ciclo (mediante el teorema de la terminación).}
+
+Para verificar que el ciclo concluye, debemos verificar los siguientes axiomas del teorema:
+\begin{itemize}
+	\item \textbf{\Circled{4}. $\{I \land B \land f_v = v_0\} S \{f_v < v_0\}$}
+	\item \textbf{\Circled{5}. $\{I \land f_v \leq 0\} \implica \neg B$} 
+\end{itemize}
+
+Aclaraciones: $f_v$ es la función variante, la cual se define como $f_v = (\longitud{ciudades} - i)$. Dado que $f_v$ debe ser una función decreciente y la longitud de ciudades es constante mientras que $i$ crece con cada iteración, se trata de una función decreciente.
+
+Para ejemplificar, supongamos que la lista de ciudades es ciudades = [("Buenos Aires", 30000), ("Santa Rosa", 15000), ("Rosario", 25000), ("Jujuy", 20000)]. La siguiente tabla muestra una visualización de la evolución de los valores en cada iteración:
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{||l c c r||} 
+		\hline
+		Iteración & i & res & $f_v$ \\ [0.5ex] 
+		\hline\hline
+		0 & 0 & 0 & 4 \\ 
+		1 & 1 & 30000 & 3 \\
+		2 & 2 & 45000 & 2 \\
+		3 & 3 & 70000 & 1 \\
+		4 & 4 & 90000 & 0 \\
+		\hline
+	\end{tabular}
+	\caption{Visualización de la evolución de los valores en cada iteración.}
+	\label{tab:ejemplo}
+\end{table}
+
+Cuando $i = 4$, la guarda $B \equiv (i < \longitud{ciudades})$ deja de cumplirse, y se sale del ciclo, lo que confirma que $f_v \leq 0$.
+
+\textbf{\Circled{4}. $\{I \land B \land f_v = v_0\} S \{f_v < v_0\}$}
+
+Primero, definamos $\{I \land B \land f_v = v_0\}$:
+\[
+\{I \land B \land f_v = v_0\} \equiv (0 \leq i \leq \longitud{ciudades} \land res = \sum_{j=0}^{i-1}ciudades[j].habitantes \land i < \longitud{ciudades} \land v_0 = \longitud{ciudades} - i)
+\]
+\[
+\equiv (0 \leq i < \longitud{ciudades} \land res = \sum_{j=0}^{i-1}ciudades[j].habitantes \land v_0 = \longitud{ciudades} - i)
+\]
+{(Se ha comprimido el rango de $i$).}
+
+Para probar que la tripla de Hoare es válida: \\
+(Se utiliza el axioma 3 de WP).
+\[
+\{I \land B \land f_v = v_0\} \implica Wp(res := res + ciudades[i].habitantes, Wp(i := i + 1, \longitud{ciudades} - i < v_0))
+\]
+
+Llamemos \Circled{1} a $Wp(i := i + 1, \longitud{ciudades} - i < v_0)$ y \Circled{2} a $Wp(res := res + ciudades[i].habitantes, \Circled{1})$.
+
+\textbf{Calculamos \Circled{1}:}
+\[
+Wp(i := i + 1, \longitud{ciudades} - i < v_0) \equiv (def(i) \yLuego \longitud{ciudades} - (i + 1) < v_0) \equiv (\longitud{ciudades} - i - 1 < v_0)
+\]
+
+Ahora, reemplazamos el valor calculado de \Circled{1} en \Circled{2} y obtenemos:
+\[
+Wp(res := res + ciudades[i].habitantes, \longitud{ciudades} - i - 1 < v_0)
+\]
+
+\textbf{Calculamos \Circled{2}:} \\ [0.2cm]
+$
+Wp(res := res + ciudades[i].habitantes, \longitud{ciudades} - i - 1 < v_0) \equiv (def(i) \land def(res) \land def(ciudades) \land 0 \leq i < \longitud{ciudades} \yLuego \longitud{ciudades} - i - 1 < v_0) \equiv (0 \leq i < \longitud{ciudades} \land \longitud{ciudades} - i - 1 < v_0)
+$
+
+Luego, verificamos si $\{I \land B \land f_v = v_0\} \implica Wp(S_c, f_v < v_0)$. Esto es claramente cierto, ya que $v_0 = \longitud{ciudades} - i$ y sabemos que $v_0 > \longitud{ciudades} - i - 1$, lo que implica que $\longitud{ciudades} - i > \longitud{ciudades} - i - 1$, y por lo tanto la desigualdad $(0 > -1)$ siempre es verdadera.
+
+\textbf{\Circled{5}. $\{I \land f_v \leq 0\} \implica \neg B$}
+
+Primero definamos $\{I \land f_v \leq 0\}$:
+$
+\{I \land f_v \leq 0\} \equiv (0 \leq i \leq \longitud{ciudades} \land res = \sum_{j=0}^{i-1}ciudades[j].habitantes \land \longitud{ciudades} \leq i) \equiv (i = \longitud{ciudades} \land res = \sum_{j=0}^{\longitud{ciudades}-1}ciudades[j].habitantes)
+$
+
+Desarrollando la negación de la guarda:
+\[
+\neg B \equiv (i \geq \longitud{ciudades})
+\]
+Entonces, $(i = \longitud{ciudades}) \implica (i \geq \longitud{ciudades})$.
+
+En conclusión, la correctitud de la implementación del programa ha sido demostrada mediante todo lo detallado anteriormente. Además, se ha comprobado que el ciclo es parcialmente correcto utilizando el teorema del invariante y que termina en una cantidad finita de pasos aplicando el teorema de la terminación.
 \end{quote}
 \end{document}
