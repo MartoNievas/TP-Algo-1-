@@ -178,7 +178,7 @@
  \textbf{Cálculo de la Wp(res := 0 ; Wp(i := 0, $P_c$)):} \\[0.2cm]
  llamemos \Circled{1} a Wp(i := 0, $P_c$) y \Circled{2} Wp(res := 0, \Circled{1}) (utilizo el axioma 3) \\[0.2cm]
  \textbf{Calculamos \Circled{1}:} \\[0.2cm]
- $Wp(i := 0, P_c)$ $\equiv(def(i) \land P \land 0 = 0 \land res = 0)$ $\equiv (P \land \True \land res = 0)$ $\equiv (P \land res = 0)$ \\[0.2cm]
+ $Wp(i := 0, P_c)$ $\equiv(def(i) \yLuego P \land 0 = 0 \land res = 0)$ $\equiv (P \land \True \land res = 0)$ $\equiv (P \land res = 0)$ \\[0.2cm]
  Una vez calculado \Circled{1} lo reemplazamos en \Circled{2} y nos queda $Wp(res := 0, P \land res = 0)$ \\[0.2cm]
  \textbf{Calculamos \Circled{2}} \\[0.2cm]
  $Wp(res := 0, P \land res = 0)$ $\equiv (def(res) \yLuego P \land 0 = 0)$ $\equiv (P \land \True)$ $\equiv P$ \\[0.2cm]
@@ -194,6 +194,18 @@
  \item \Circled{2}. $\{I \land B\} S \{I\}$
  \item \Circled{3}. $\{I \land \neg B\} \implica Q_c$
  \end{itemize}
- 
+ \textbf{\Circled{1}. $P_c \implica I$} (La precondicion del ciclo implica a el invariante) \\ [0.1cm]
+ Entonces tenemos que $(P \land res = 0 \land i = 0) \implica (i \leq i \leq \longitud{ciudades} \land res = \sum_{j=0}^{i-1}ciudades[j].habitantes)$ pero como $i = 0 \implica 0 \leq i \leq \longitud{ciudades}$. Ademas como consecuencia $res = \sum_{j=0}^{0-1}ciuadades[j].habitantes = \sum_{j=0}^{-1}ciuadades[j].habitantes = 0$ por lo tanto queda desmotrado que $P_c \implica I$. \\ [0.2cm]
+ \textbf{\Circled{2}. $\{I \land B\} S \{I\} \longleftrightarrow (\{I \land B\} \implica Wp(S_c,I))$  } \\ [0.2cm]
+ Caculemos el $Wp(S_c,I)$ (Donde $S_c$ es el cuerpo del ciclo) por lo tanto por aximo 3 seria equivalente calcular el $Wp(res := ciudades[i].habitantes, Wp(i := i + 1, I))$. \\
+ Llamamos \Circled{A} a $Wp(i := i + 1, I)$ y \Circled{B} $Wp(res := res + ciudades[i.habitantes], \Circled{A})$ \\ [0.1cm]
+ \textbf {Calculo de \Circled{A}:} \\ [0.1cm]
+ $Wp(i := i + 1, I) \equiv (def(i) \yLuego (0 \leq i + 1 \leq \longitud{ciudades} \land res = \sum_{j=0}^{(i+1)-1}ciudades[j].habitantes)) \equiv (0 \leq i + 1 \leq \longitud{ciudades} \land res = \sum_{j=0}^{i}ciuades[j].habitantes)$. \\ [0.1cm]
+ Una vez calculado \Circled{A} remplazamos en \Circled{B} y queda de la siguiente manera $Wp(res := res + ciuadades[j].habitantes, 0 \leq i + 1 \leq \longitud{ciudades} \land res = \sum_{j=0}^{i}ciudades[j].habitantes)$ \\ [0.1cm]
+ \textbf {Calculo de \Circled{B}:} \\ [0.1cm]
+ $Wp(res := res + ciuadades[j].habitantes, 0 \leq i + 1 \leq \longitud{ciudades} \land res = \sum_{j=0}^{i}ciudades[j].habitantes) \equiv ((def(i) \land def(ciudades) \land 0 \leq i < \longitud{ciudades}) \yLuego (0 \leq i + 1 \leq \longitud{ciudades} \land res + ciudades[i].habitantes = \sum_{j=0}^{i}ciuadades[j].habitantes))$ ahora me fijo que puedo comprimir los rango y restar ciudades[i] a la sumatoria que seria el ultimo termino. Entonces me queda de la siguiente manera: \\ [0.1cm]
+ $Wp(res := res + ciudades[i].habitantes, \Circled{A}) \equiv (0 \leq i < \longitud{ciuadades} \land res = \sum_{j=0}^{i-1}ciudades[j].habitantes)$. \\ [0.1cm]
+ Ahora veamos si vale que $\{I \land B\} \implica Wp(S_c,I)$ \\ 
+ Donde $\{I \land B\} \equiv (0 \leq i \leq \longitud{ciudades} \land res = \sum_{j=0}^{i -1}ciudades[j].habitantes \land i < \longitud{ciudades} )$ comprimo el rango de i y me queda lo siguente $(0 \leq i < \longitud{ciudades} \land res = \sum_{j=0}^{i -1}ciudades[j].habitantes)$. Como $\{I \land B\} \equiv Wp(S_c,I)$ entonces vale la implicacion y la tripla de Hoare es valida. \\ [0.2cm]
 \end{quote}
 \end{document}
