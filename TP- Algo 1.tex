@@ -229,9 +229,9 @@ Para verificar que el ciclo concluye, debemos verificar los siguientes axiomas d
 	\item \textbf{\Circled{5}. $\{I \land f_v \leq 0\} \implica \neg B$} 
 \end{itemize}
 
-Aclaraciones: $f_v$ es la función variante, la cual se define como $f_v = (\longitud{ciudades} - i)$. Dado que $f_v$ debe ser una función decreciente y la longitud de ciudades es constante mientras que $i$ crece con cada iteración, se trata de una función decreciente.
+Aclaraciones: $f_v$ es la función variante, la cual defino como $f_v = (\longitud{ciudades} - i)$. Dado que $f_v$ debe ser una función decreciente y la longitud de ciudades es constante mientras que $i$ crece con cada iteración, se trata de una función decreciente.
 
-Para ejemplificar, supongamos que la lista de ciudades es ciudades = [("Buenos Aires", 30000), ("Santa Rosa", 15000), ("Rosario", 25000), ("Jujuy", 20000)]. La siguiente tabla muestra una visualización de la evolución de los valores en cada iteración:
+Para ejemplificar, supongamos que la lista de ciudades es ciudades = [("Buenos Aires",60000), ("Santa Rosa", 15000), ("Rosario", 25000), ("Jujuy", 20000)]. La siguiente tabla muestra una visualización de la evolución de los valores en cada iteración:
 
 \begin{table}[h!]
 	\centering
@@ -240,10 +240,10 @@ Para ejemplificar, supongamos que la lista de ciudades es ciudades = [("Buenos A
 		Iteración & i & res & $f_v$ \\ [0.5ex] 
 		\hline\hline
 		0 & 0 & 0 & 4 \\ 
-		1 & 1 & 30000 & 3 \\
-		2 & 2 & 45000 & 2 \\
-		3 & 3 & 70000 & 1 \\
-		4 & 4 & 90000 & 0 \\
+		1 & 1 & 60000 & 3 \\
+		2 & 2 & 75000 & 2 \\
+		3 & 3 & 100000 & 1 \\
+		4 & 4 & 120000 & 0 \\
 		\hline
 	\end{tabular}
 	\caption{Visualización de la evolución de los valores en cada iteración.}
@@ -290,7 +290,7 @@ Luego, verificamos si $\{I \land B \land f_v = v_0\} \implica Wp(S_c, f_v < v_0)
 
 \textbf{\Circled{5}. $\{I \land f_v \leq 0\} \implica \neg B$}
 
-Primero definamos $\{I \land f_v \leq 0\}$:
+Primero definamos $\{I \land f_v \leq 0\}$: \\ [0.1cm]
 $
 \{I \land f_v \leq 0\} \equiv (0 \leq i \leq \longitud{ciudades} \land res = \sum_{j=0}^{i-1}ciudades[j].habitantes \land \longitud{ciudades} \leq i) \equiv (i = \longitud{ciudades} \land res = \sum_{j=0}^{\longitud{ciudades}-1}ciudades[j].habitantes)
 $
@@ -301,6 +301,24 @@ Desarrollando la negación de la guarda:
 \]
 Entonces, $(i = \longitud{ciudades}) \implica (i \geq \longitud{ciudades})$.
 
-En conclusión, la correctitud de la implementación del programa ha sido demostrada mediante todo lo detallado anteriormente. Además, se ha comprobado que el ciclo es parcialmente correcto utilizando el teorema del invariante y que termina en una cantidad finita de pasos aplicando el teorema de la terminación.
+En conclusión, la correctitud de la implementación del programa ha sido demostrada mediante todo lo detallado anteriormente. Además, se ha comprobado que el ciclo es parcialmente correcto utilizando el teorema del invariante y que termina en una cantidad finita de pasos aplicando el teorema de la terminación. \\ [0.2cm]
+\textbf{Segundo ítem:} \\ [0.2cm]
+Como segundo punto, debemos demostrar que la suma de todos los habitantes es mayor a 50,000. Definimos $P$ como la precondición requerida en la especificación: \\ [0.2cm]
+
+$P \equiv (\existe[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \yLuego ciudades[i].habitantes > 50,000}) \land (\paraTodo[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \implicaLuego ciudades[i].habitantes \geq 0}) \land (\paraTodo[unalinea]{i, j}{\ent}{0 \leq i < j \implicaLuego ciudades[i].nombre \neq ciudades[j].nombre})$. \\ [0.2cm]
+
+Analizando más detalladamente la precondición, podemos observar lo siguiente: \\ [0.2cm]
+
+$P \implica \existe[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \yLuego ciudades[i].habitantes > 50,000}$ \\ [0.1cm]
+$P \implica \paraTodo[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \implicaLuego ciudades[i].habitantes \geq 0}$ \\ [0.2cm]
+
+Básicamente, la precondición implica que existe al menos una ciudad con más de 50,000 habitantes y que el resto de las ciudades tiene 0 o más habitantes. \\ [0.2cm]
+
+Dado que hemos demostrado que la precondición de la especificación implica la postcondición ($P \implica Q$), es decir, que $res$ es igual a la suma de todos los habitantes de las ciudades, y que la implementación es correcta con respecto a la especificación, podemos concluir lo siguiente: \\ [0.2cm]
+
+$P \implica (res = \sum_{i=0}^{\longitud{ciudades}-1} ciudades[i].habitantes \land res > 50,000)$ \\ [0.1cm]
+(Es decir, que la suma de todos los habitantes es mayor a 50,000).
+
+
 \end{quote}
 \end{document}
