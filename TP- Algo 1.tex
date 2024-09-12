@@ -312,12 +312,44 @@ Analizando más detalladamente la precondición, podemos observar lo siguiente: 
 $P \implica \existe[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \yLuego ciudades[i].habitantes > 50,000}$ \\ [0.1cm]
 $P \implica \paraTodo[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \implicaLuego ciudades[i].habitantes \geq 0}$ \\ [0.2cm]
 
-Básicamente, la precondición implica que existe al menos una ciudad con más de 50,000 habitantes y que el resto de las ciudades tiene 0 o más habitantes. \\ [0.2cm]
+\subsection*{Demostración de que el valor devuelto es mayor a 50,000 utilizando la triple de Hoare}
 
-Dado que hemos demostrado que la precondición de la especificación implica la postcondición ($P \implica Q$), es decir, que $res$ es igual a la suma de todos los habitantes de las ciudades, y que la implementación es correcta con respecto a la especificación, podemos concluir lo siguiente: \\ [0.2cm]
+Queremos demostrar la siguiente triple de Hoare:
+\[
+\{ \existe[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \implicaLuego ciudades[i].habitantes > 50000} \} \ S \ \{ \texttt{res} > 50,000 \}
+\]
+Donde el código \(S\) es el siguiente:
+\begin{lstlisting}[caption={},label=code:for]
+	res := 0;
+	i := 0;
+	while (i < ciudades.lenght()) do
+	res := res + ciudades[i].habitantes;
+	i := i + 1
+	endwhile
+\end{lstlisting}
 
-$P \implica (res = \sum_{i=0}^{\longitud{ciudades}-1} ciudades[i].habitantes \land res > 50,000)$ \\ [0.1cm]
-(Es decir, que la suma de todos los habitantes es mayor a 50,000).
+\begin{itemize}
+	\item \textbf{Precondición} (\(P\)): 
+	\[
+	\existe[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \implicaLuego ciudades[i]}
+	\]
+	Sabemos que existe al menos una ciudad cuya cantidad de habitantes supera los 50,000.
+	
+	\item \textbf{Ciclo} (\(S\)): En cada iteración del ciclo, se va acumulando el número total de habitantes en la variable \texttt{res}. Cuando el ciclo termina, tenemos:
+	\[
+	\texttt{res} = \sum_{j=0}^{\texttt{ciudades.length}-1} \texttt{ciudades}[j].\texttt{habitantes}
+	\]
+	
+	\item \textbf{Poscondición} (\(Q\)): Dado que al menos una ciudad tiene más de 50,000 habitantes y estamos sumando los habitantes de todas las ciudades, se cumple que:
+	\[
+	\texttt{res} > 50,000
+	\]
+\end{itemize}
+
+Por lo tanto, la triple de Hoare se verifica:
+\[
+\{ \existe[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \implicaLuego ciudades[i].habitantes > 50000} \} \ S \ \{ \texttt{res} > 50,000 \}
+\]
 
 
 \end{quote}
