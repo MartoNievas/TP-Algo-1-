@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.8.29)  12 SEP 2024 17:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.8.29)  13 SEP 2024 14:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -328,7 +328,17 @@ Cargando package 'caratula' v0.5 (2013/08/04)
 \c@coDirectoresCount=\count297
 \codirecTabNombre=\toks39
 \codirecTabEmail=\toks40
-)
+) (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
@@ -337,10 +347,6 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 ) (TP- Algo 1.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
-
-
-LaTeX Warning: Label `code:for' multiply defined.
-
 )
 \openout1 = `"TP- Algo 1.aux"'.
 
@@ -437,6 +443,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--23
 
  []
 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
+
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
+
+
+(C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 <logo_uba.jpg, id=2, 225.4824pt x 231.7458pt>
 File: logo_uba.jpg Graphic file (type jpg)
 <use logo_uba.jpg>
@@ -630,21 +647,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 304--307
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 308--309
+Underfull \hbox (badness 10000) in paragraph at lines 308--310
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
+Underfull \hbox (badness 10000) in paragraph at lines 320--323
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--314
+Overfull \hbox (31.52423pt too wide) in paragraph at lines 324--326
+\OML/cmm/m/it/10 I[] \OMS/cmsy/m/n/10 ^^Q \OT1/cmr/m/n/10 (0 \OMS/cmsy/m/n/10 ^
+^T \OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 ^^T j\OML/cmm/m/it/10 ciudades\OMS/cmsy/
+m/n/10 j ^[] \OML/cmm/m/it/10 res \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 ciuda
+des\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 j\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 :habita
+ntes \OMS/cmsy/m/n/10 ^ \OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 9\OML/cmm/m/it/10 k \
+OT1/cmr/m/n/10 : \U/dsrom/m/n/10 Z\OT1/cmr/m/n/10 ) (0 \OMS/cmsy/m/n/10 ^^T \OM
+L/cmm/m/it/10 k < \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ciudades\OMS/cmsy/m/n/10 j
+ ^[] \OML/cmm/m/it/10 ciudades\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 k\OT1/cmr/m/n/1
+0 ]\OML/cmm/m/it/10 :habitantes >
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--326
 
  []
 
-[6] [7] (TP- Algo 1.aux
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--337
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
+
+ []
+
+[7] (TP- Algo 1.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 )
@@ -652,19 +702,15 @@ LaTeX Info: Redefining \% on input line 9.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 9234 strings out of 474485
- 152210 string characters out of 5743734
+ 9763 strings out of 474485
+ 158415 string characters out of 5743734
  1968542 words of memory out of 5000000
- 31408 multiletter control sequences out of 15000+600000
- 566981 words of font info for 72 fonts, out of 8000000 for 9000
+ 31919 multiletter control sequences out of 15000+600000
+ 569125 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,9n,80p,1337b,1696s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,9n,80p,1337b,1409s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\rubia\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk><C:/Users/rubia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/rubia/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -684,10 +730,10 @@ s/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/rubia/AppData/Local/Programs/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/rubia/AppData/Local/
 Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/rubia/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/rub
-ia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/U
-sers/rubia/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom1
-0.pfb>
-Output written on "TP- Algo 1.pdf" (8 pages, 612670 bytes).
+ia/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C
+:/Users/rubia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols
+/msam10.pfb>
+Output written on "TP- Algo 1.pdf" (8 pages, 616104 bytes).
 PDF statistics:
  127 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

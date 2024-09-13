@@ -2,7 +2,7 @@
 \usepackage{circledsteps}
 \input{AEDmacros}
 \usepackage{caratula} % Version modificada para usar las macros de algo1 de ~> https://github.com/bcardiff/dc-tex
-
+\usepackage{amssymb}
 
 \titulo{Trabajo Practico de Especificacion}
 \subtitulo{Especificacion y WP(Weakness Precondition)}
@@ -303,53 +303,48 @@ Entonces, $(i = \longitud{ciudades}) \implica (i \geq \longitud{ciudades})$.
 
 En conclusión, la correctitud de la implementación del programa ha sido demostrada mediante todo lo detallado anteriormente. Además, se ha comprobado que el ciclo es parcialmente correcto utilizando el teorema del invariante y que termina en una cantidad finita de pasos aplicando el teorema de la terminación. \\ [0.2cm]
 \textbf{Segundo ítem:} \\ [0.2cm]
-Como segundo punto, debemos demostrar que la suma de todos los habitantes es mayor a 50,000. Definimos $P$ como la precondición requerida en la especificación: \\ [0.2cm]
+Como segundo punto, debemos demostrar que la suma de todos los habitantes es mayor a 50,000. Definimos $P$ como la precondición requerida en la especificación y $Q_0$ como la nueva postcondición: \\ [0.2cm]
 
-$P \equiv (\existe[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \yLuego ciudades[i].habitantes > 50,000}) \land (\paraTodo[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \implicaLuego ciudades[i].habitantes \geq 0}) \land (\paraTodo[unalinea]{i, j}{\ent}{0 \leq i < j \implicaLuego ciudades[i].nombre \neq ciudades[j].nombre})$. \\ [0.2cm]
+$P \equiv \existe[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \yLuego ciudades[i].habitantes > 50,000 \land \paraTodo[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \implicaLuego ciudades[i].habitantes \geq 0 } \land \paraTodo[unalinea]{i, j}{\ent}{0 \leq i < j \implicaLuego ciudades[i].nombre \neq ciudades[j].nombre }} $ \\ [0.2cm]
+$Q_0 \equiv (res = \sum_{i=0}^{\longitud{ciudades}-1}ciudades[i].habitantes \land res > 50,000)$ \\ [0.2cm]
 
-Analizando más detalladamente la precondición, podemos observar lo siguiente: \\ [0.2cm]
-
-$P \implica \existe[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \yLuego ciudades[i].habitantes > 50,000}$ \\ [0.1cm]
-$P \implica \paraTodo[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \implicaLuego ciudades[i].habitantes \geq 0}$ \\ [0.2cm]
-
-\subsection*{Demostración de que el valor devuelto es mayor a 50,000 utilizando la triple de Hoare}
-
-Queremos demostrar la siguiente triple de Hoare:
-\[
-\{ \existe[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \implicaLuego ciudades[i].habitantes > 50000} \} \ S \ \{ \texttt{res} > 50,000 \}
-\]
-Donde el código \(S\) es el siguiente:
-\begin{lstlisting}[caption={},label=code:for]
-	res := 0;
-	i := 0;
-	while (i < ciudades.lenght()) do
-	res := res + ciudades[i].habitantes;
-	i := i + 1
-	endwhile
-\end{lstlisting}
-
+Ahora, lo que tenemos que demostrar es que la tripla de Hoare es válida $\{P\} S \{Q_0\}$. Para eso, haremos la demostración inversa siguiendo los pasos indicados a continuación, utilizando lo demostrado en el punto anterior: 
 \begin{itemize}
-	\item \textbf{Precondición} (\(P\)): 
-	\[
-	\existe[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \implicaLuego ciudades[i]}
-	\]
-	Sabemos que existe al menos una ciudad cuya cantidad de habitantes supera los 50,000.
-	
-	\item \textbf{Ciclo} (\(S\)): En cada iteración del ciclo, se va acumulando el número total de habitantes en la variable \texttt{res}. Cuando el ciclo termina, tenemos:
-	\[
-	\texttt{res} = \sum_{j=0}^{\texttt{ciudades.length}-1} \texttt{ciudades}[j].\texttt{habitantes}
-	\]
-	
-	\item \textbf{Poscondición} (\(Q\)): Dado que al menos una ciudad tiene más de 50,000 habitantes y estamos sumando los habitantes de todas las ciudades, se cumple que:
-	\[
-	\texttt{res} > 50,000
-	\]
+	\item \textbf{\Circled{1} $Q_c \implica Q_0$}
+	\item \textbf{\Circled{2} $\{I \land \neg B\} \implica Q_c$}
+	\item \textbf{\Circled{3} $\{I \land B\} S \{I\}$}
+	\item \textbf{\Circled{4} $P_c \implica I$}
+	\item \textbf{\Circled{5} $P \implica P_c$}
 \end{itemize}
 
-Por lo tanto, la triple de Hoare se verifica:
-\[
-\{ \existe[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \implicaLuego ciudades[i].habitantes > 50000} \} \ S \ \{ \texttt{res} > 50,000 \}
-\]
+Comenzamos con \textbf{\Circled{1}}. Definimos $Q_c$ de la siguiente manera: \\ [0.1cm]
+$Q_c \equiv (res = \sum_{i=0}^{\longitud{ciudades}-1}ciudades[i].habitantes \land res > 50,000)$ \\ [0.2cm]
+Es trivial que $Q_c \implica Q_0$, ya que ambas expresiones son equivalentes. \\ [0.2cm]
+
+A continuación, debemos probar \textbf{\Circled{2}}. Como modificamos $Q_c$, también debemos modificar el invariante para asegurarnos de que sigue cumpliéndose. Definimos entonces el nuevo invariante $(I_n)$ de la siguiente manera: \\ [0.2cm]
+$I_n \equiv (0 \leq i \leq \longitud{ciudades} \yLuego res = \sum_{j=0}^{i-1}ciudades[j].habitantes \land \existe[unalinea]{k}{\ent}{0 \leq k < \longitud{ciudades} \yLuego ciudades[k].habitantes > 50,000} \land \paraTodo[unalinea]{k}{\ent}{0 \leq k < \longitud{ciudades} \implicaLuego ciudades[k].habitantes \geq 0 })$ \\ [0.2cm]
+
+Ahora, con el nuevo invariante, la demostración es casi trivial. Sabemos que $\neg B \equiv (i \geq \longitud{ciudades})$ sigue siendo la misma. Dado el rango de $i$ en $I_n$ y el rango de $i$ en $\neg B$, podemos determinar que $i = \longitud{ciudades}$. Luego, la sumatoria queda como $\sum_{j=0}^{\longitud{ciudades}-1} ciudades[j].habitantes$, y como el invariante establece que existe al menos una ciudad con más de 50,000 habitantes, y el resto de las ciudades tiene 0 o más habitantes, se cumple $Q_c$. \\ [0.2cm]
+
+El agregado al invariante $(I_n)$ no modifica la demostración de \textbf{\Circled{3}}, por lo que sigue siendo válida. \\ [0.2cm]
+
+En cuanto al punto \textbf{\Circled{4}}, recordemos que $P_c$ estaba definido de la siguiente manera: \\ [0.2cm]
+\textbf{$P_c$} $\equiv (P \land i = 0 \land res = 0)$ (donde $P$ es la precondición de la especificación). \\ [0.2cm]
+Lo que tenía el invariante anterior sigue siendo válido, como se demostró en el punto 2.1. Ahora debemos verificar si $P_c$ implica lo que fue modificado. \\ [0.2cm]
+Como $P$ forma parte de $P_c$, es fácil ver que: \\ [0.1cm]
+$P_c \implica \existe[unalinea]{k}{\ent}{0 \leq k < \longitud{ciudades} \land ciudades[k].habitantes > 50,000}$ \\ 
+$P_c \implica \paraTodo[unalinea]{k}{\ent}{0 \leq k < \longitud{ciudades} \implicaLuego ciudades[k].habitantes \geq 0}$ \\ [0.2cm]
+
+Por último, en cuanto al punto \textbf{\Circled{5}}, dado que ni $P$ ni $P_c$ se modificaron, sigue siendo válido, como se demostró en el ejercicio 2.1. \\ [0.2cm]
+\begin{itemize}
+	\item \textbf{\Circled{1} $Q_c \implica Q_0$} \checkmark
+	\item \textbf{\Circled{2} $\{I \land \neg B\} \implica Q_c$} \checkmark
+	\item \textbf{\Circled{3} $\{I \land B\} S \{I\}$} \checkmark
+	\item \textbf{\Circled{4} $P_c \implica I$} \checkmark
+	\item \textbf{\Circled{5} $P \implica P_c$} \checkmark
+\end{itemize}
+
+Con todo esto, podemos afirmar que la tripla de Hoare $\{P\} S \{Q_0\}$ es válida, y queda demostrado que la suma de todos los habitantes es siempre mayor a 50,000.
 
 
 \end{quote}
