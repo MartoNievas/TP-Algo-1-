@@ -13,9 +13,9 @@
 \grupo{pesutipolimardiano}
 
 \integrante{Nievas, Martin}{453/24}{tinnivas@gmail.com}
-\integrante{Bercovich, Maximo}{002/01}{email2@dominio.com}
+\integrante{Bercovich, Maximo}{504/24}{maximobercovich@gmail.com}
 \integrante{Apellido, Nicolas}{003/01}{email3@dominio.com}
-\integrante{Pomsztein, Andy}{624/24}{pomszteinandy@gmai.com}
+\integrante{Pomsztein, Andy}{624/24}{pomszteinandy@gmail.com}
 \graphicspath{{../static/}}
 
 \begin{document}
@@ -93,7 +93,9 @@
 	\vspace{0.2cm}
 	\pred{esMatrizCuadrada}{ s : \matriz{\ent}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego |s[i]| = |s|}}
 	\vspace*{0.2cm}
-	\pred{esCamino}{ distancias : \matriz{\ent}, c : \TLista{\ent}, d : \ent, h : \ent}{(esMatrizCuadrada(distancias) \land |c| \geq 2) \yLuego  \paraTodo[unalinea]{e}{\ent}{e \in c \implicaLuego 0 \leq e < |distancias| \land (c[0] = d \land c[|c|-1] = h) \land \paraTodo[unalinea]{i}{\ent}{ 0 \leq i < |c|-1 \implicaLuego distancias[c[i]][c[i+1]] > 0 }}}
+	\pred{esCamino}{ distancias : \matriz{\ent}, c : \TLista{\ent}, d : \ent, h : \ent}{(esMatrizCuadrada(distancias) \land |c| \geq 2) \yLuego  \paraTodo[unalinea]{e}{\ent}{e \in c \implicaLuego 0 \leq e < |distancias| \land (c[0] = d \land c[|c|-1] = h) \land \paraTodo[unalinea]{i}{\ent}{ 0 \leq i < |c|-1 \implicaLuego distancias[c[i]][c[i+1]] > 0 }}} 
+	\vspace{0.2cm}
+	\pred{ciudadesValidas}{ciudades : \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \implica ciudades[i].habitantes \geq 0}}
 \end{quote}
 \section{Resolucion de Ejercicios}
 \subsection{Especificacion}
@@ -101,7 +103,7 @@
 	\textbf{Ejercicio 1:}
 	\vspace{0.2cm}
 	\begin{proc}{grandesCiudades}{\In ciudades : \TLista{Ciudad}}{\TLista{Ciudad}}
-		\requiere{\True}
+		\requiere{ciudadesDistintas(ciudades)\land ciudadesValidas(ciudades)}
 		\asegura{|res| = cantidadCiudadesGrandes(ciudades)  \land sonTodasCiudadesGrandes(res) \land \paraTodo[unalinea]{c}{Ciudad}{c \in res \implicaLuego c \in ciudades}}
 	\end{proc}	
 	\pred{sonTodasCiudadesGrandes}{ ciudades : \TLista{Ciudad}}{
@@ -113,7 +115,7 @@
 	\vspace*{0.2cm}
 	\textbf{Ejercicio 2:}
 	\begin{proc}{sumaDeHabitantes}{\In menoresDeCiudades : \TLista{Ciudad}, \In mayoresDeCiudad : \TLista{Ciudad}}{\TLista{Ciudad}}
-		\requiere{|menoresDeCiudades| = |mayoresDeCiudades|  \land \\ mismasCiudades(menoresDeCiudades, mayoresDeCiudades \land \\ ciudadesDistintas(menoresDeCiudades) \land ciudadesDistintas(mayoresDeCiudades))}
+		\requiere{|menoresDeCiudades| = |mayoresDeCiudades|  \land \\ mismasCiudades(menoresDeCiudades, mayoresDeCiudades \land \\ ciudadesDistintas(menoresDeCiudades) \land ciudadesDistintas(mayoresDeCiudades) \land \\ ciudadesValidas(menoresDeCiudades)\land ciudadesValidas(mayoresDeCiudades))}
 		\asegura{\longitud{res} = \longitud{menoresDeCiudades} \land esLaSuma(res, menoresDeCiudades, mayoresDeCiudades) \land \\ mismasCiudades(res, menoresDeCiudades) \land mismasCiudades(res, mayoresDeCiudades) }
 	\end{proc}
 	\pred{mismasCiudades}{ s: \TLista{Ciudad},  l: \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego \existe[unalinea]{j}{\ent}{0 \leq j < |l| \yLuego s[i].nombre = l[j].nombre}} }
@@ -155,7 +157,7 @@
  \begin{quote}
  \begin{itemize}
  	\item 1. \textbf{Precondicion, guarda y postcondicion del ciclo}
- 	\item 2. \textbf{P \implica $P_c$} $\Longleftrightarrow P_c \implica \text{Wp}(\text{res} := 0; \text{Wp}(i := 0, P_c))$(La precondición de la especificación implica la precondición del ciclo.)
+ 	\item 2. \textbf{P \implica $P_c$} $\Longleftrightarrow P \implica \text{Wp}(\text{res} := 0; \text{Wp}(i := 0, P_c))$(La precondición de la especificación implica la precondición del ciclo.)
  	\item 3. \textbf{Correctitud parcial del ciclo} 
  	\item 4. \textbf{Terminación del ciclo} 
  \end{itemize}
