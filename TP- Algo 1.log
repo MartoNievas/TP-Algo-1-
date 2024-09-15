@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.8.29)  15 SEP 2024 10:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.8.29)  15 SEP 2024 19:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -350,20 +350,20 @@ LaTeX Info: Redefining \% on input line 9.
 )
 \openout1 = `"TP- Algo 1.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -390,8 +390,8 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Redefining \. on input line 21.
-LaTeX Info: Redefining \% on input line 21.
+LaTeX Info: Redefining \. on input line 23.
+LaTeX Info: Redefining \% on input line 23.
 \c@lstlisting=\count305
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
@@ -436,19 +436,19 @@ Package caption Info: End \AtBeginDocument code.
 <logo_dc.jpg, id=1, 215.6055pt x 83.5923pt>
 File: logo_dc.jpg Graphic file (type jpg)
 <use logo_dc.jpg>
-Package pdftex.def Info: logo_dc.jpg  used on input line 23.
+Package pdftex.def Info: logo_dc.jpg  used on input line 25.
 (pdftex.def)             Requested size: 215.60497pt x 83.59207pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--23
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
 
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
 
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
 
 
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -457,10 +457,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <logo_uba.jpg, id=2, 225.4824pt x 231.7458pt>
 File: logo_uba.jpg Graphic file (type jpg)
 <use logo_uba.jpg>
-Package pdftex.def Info: logo_uba.jpg  used on input line 23.
+Package pdftex.def Info: logo_uba.jpg  used on input line 25.
 (pdftex.def)             Requested size: 225.48184pt x 231.74522pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--23
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
 
  []
 
@@ -469,12 +469,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--23
 {C:/Users/rubia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./logo_dc.jp
 g> <./logo_uba.jpg>]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 4
-4.
+6.
 
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
-Overfull \hbox (22.34435pt too wide) in paragraph at lines 29--60
+Overfull \hbox (22.34435pt too wide) in paragraph at lines 31--62
  \OT1/cmr/bx/n/10 proc su-ma-DeHa-bi-tan-tes \OT1/cmr/m/n/10 (\OT1/cmss/m/n/10 
 in \OT1/cmr/m/n/10 me-no-res-De-Ciu-da-des: $\OML/cmm/m/it/10 seq\OMS/cmsy/m/n/
 10 h\OML/cmm/m/it/10 Ciudad\OMS/cmsy/m/n/10 i$\OT1/cmr/m/n/10 , \OT1/cmss/m/n/1
@@ -484,25 +484,25 @@ n/10 h\OML/cmm/m/it/10 Ciudad\OMS/cmsy/m/n/10 i$\OT1/cmr/m/n/10 ) : $\OML/cmm/m
  []
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 66.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 68.
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 6
-7.
+9.
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
 File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 67.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 69.
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 7
-4.
+6.
 
 (C:\Users\rubia\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
 File: omlcmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 74.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 76.
 
 [1]
-Overfull \hbox (18.83882pt too wide) in paragraph at lines 109--109
+Overfull \hbox (18.83882pt too wide) in paragraph at lines 111--111
  []\OT1/cmtt/m/n/10 asegura \OMS/cmsy/m/n/10 f$j\OML/cmm/m/it/10 res\OMS/cmsy/m
 /n/10 j \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 cantidadCiudadesGrandes\OT1/cmr/m/n/
 10 (\OML/cmm/m/it/10 ciudades\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it
@@ -513,7 +513,7 @@ S/cmsy/m/n/10 2
  []
 
 
-Overfull \hbox (9.74336pt too wide) in paragraph at lines 116--116
+Overfull \hbox (9.74336pt too wide) in paragraph at lines 118--118
 \OT1/cmtt/m/n/10 aux cantidadCiudadesGrandes \OT1/cmr/m/n/10 ( ciu-da-des :$\OM
 L/cmm/m/it/10 seq\OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 Ciudad\OMS/cmsy/m/n/10 i$\O
 T1/cmr/m/n/10 ) : $\U/dsrom/m/n/10 Z$ \OT1/cmr/m/n/10 = $[][] []$\OT1/cmr/bx/n/
@@ -521,7 +521,7 @@ T1/cmr/m/n/10 ) : $\U/dsrom/m/n/10 Z$ \OT1/cmr/m/n/10 = $[][] []$\OT1/cmr/bx/n/
  []
 
 
-Overfull \hbox (3.75832pt too wide) in paragraph at lines 119--119
+Overfull \hbox (3.75832pt too wide) in paragraph at lines 121--121
 \OT1/cmtt/m/n/10 proc sumaDeHabitantes \OT1/cmr/m/n/10 (\OT1/cmss/m/n/10 in \OT
 1/cmr/m/n/10 me-no-res-De-Ciu-da-des : $\OML/cmm/m/it/10 seq\OMS/cmsy/m/n/10 h\
 OML/cmm/m/it/10 Ciudad\OMS/cmsy/m/n/10 i$\OT1/cmr/m/n/10 , \OT1/cmss/m/n/10 in 
@@ -531,12 +531,12 @@ seq\OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 Ciudad\OMS/cmsy/m/n/10 i$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--119
+Underfull \hbox (badness 10000) in paragraph at lines 121--121
 
  []
 
 [2]
-Overfull \hbox (23.4929pt too wide) in paragraph at lines 131--131
+Overfull \hbox (23.4929pt too wide) in paragraph at lines 133--133
  []\OT1/cmtt/m/n/10 requiere \OMS/cmsy/m/n/10 f$\OML/cmm/m/it/10 esMatrizCuadra
 da\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 distancias\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/1
 0 ^ \OML/cmm/m/it/10 diagonalEnCeros\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 distancia
@@ -545,17 +545,17 @@ r/m/n/10 (\OML/cmm/m/it/10 distancias\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
 
-Overfull \hbox (27.3818pt too wide) in paragraph at lines 149--149
+Overfull \hbox (27.3818pt too wide) in paragraph at lines 151--151
  []\OT1/cmtt/m/n/10 requiere \OMS/cmsy/m/n/10 f$\OT1/cmr/m/n/10 (\OML/cmm/m/it/
 10 diagonalEnCeros\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 distancias\OT1/cmr/m/n/10 )
  \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 esMatrizCuadrada\OT1/cmr/m/n/10 (\OML/cmm/
@@ -565,7 +565,7 @@ sy/m/n/10 ^
  []
 
 
-Overfull \hbox (26.93109pt too wide) in paragraph at lines 150--150
+Overfull \hbox (26.93109pt too wide) in paragraph at lines 152--152
  \OML/cmm/m/it/10 distanciaRecorrida\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 distancia
 s; c\OT1/cmr/m/n/10 ))) \OMS/cmsy/m/n/10 _ \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 re
 s \OT1/cmr/m/n/10 = [ ]) \OMS/cmsy/m/n/10  []! :\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/
@@ -576,22 +576,22 @@ s \OT1/cmr/m/n/10 = [ ]) \OMS/cmsy/m/n/10  []! :\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 201--205
+Underfull \hbox (badness 10000) in paragraph at lines 203--207
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--210
+Underfull \hbox (badness 10000) in paragraph at lines 210--212
 
  []
 
 
-Overfull \hbox (31.01587pt too wide) in paragraph at lines 211--212
+Overfull \hbox (31.01587pt too wide) in paragraph at lines 213--214
 []\OT1/cmr/m/n/10 Una vez cal-cu-la-do [], re-em-pla-za-mos en [], que que-da d
 e la si-guien-te ma-ne-ra: $\OML/cmm/m/it/10 Wp\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
 0 res \OT1/cmr/m/n/10 := \OML/cmm/m/it/10 res \OT1/cmr/m/n/10 + \OML/cmm/m/it/1
@@ -600,12 +600,7 @@ e la si-guien-te ma-ne-ra: $\OML/cmm/m/it/10 Wp\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
 
  []
 
@@ -615,7 +610,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 218--219
  []
 
 
-Overfull \hbox (6.67664pt too wide) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
+
+ []
+
+
+Overfull \hbox (6.67664pt too wide) in paragraph at lines 222--223
 []\OT1/cmr/m/n/10 Ahora, vea-mos si $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 I \OMS/
 cmsy/m/n/10 ^ \OML/cmm/m/it/10 B\OMS/cmsy/m/n/10 g [][]! \OML/cmm/m/it/10 Wp\OT
 1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]; I\OT1/cmr/m/n/10 )$. Don-de $\OMS/cmsy/m/n/
@@ -627,7 +627,7 @@ T1/cmr/m/n/10 ]\OML/cmm/m/it/10 :habitantes \OMS/cmsy/m/n/10 ^
  []
 
 
-Overfull \hbox (1.15036pt too wide) in paragraph at lines 220--221
+Overfull \hbox (1.15036pt too wide) in paragraph at lines 222--223
 \OML/cmm/m/it/10 i < \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ciudades\OMS/cmsy/m/n/1
 0 j\OT1/cmr/m/n/10 )$. Com-pri-mi-mos el ran-go de $\OML/cmm/m/it/10 i$ \OT1/cm
 r/m/n/10 y ob-te-ne-mos $(0 \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 i < \OMS/cmsy
@@ -637,7 +637,7 @@ j\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 :habitantes\OT1/cmr/m/n/10 )$.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
  []
 
@@ -645,22 +645,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 220--221
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 308--311
+Underfull \hbox (badness 10000) in paragraph at lines 310--313
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--314
+Underfull \hbox (badness 10000) in paragraph at lines 314--316
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--327
+Underfull \hbox (badness 10000) in paragraph at lines 326--329
 
  []
 
 [6]
-Overfull \hbox (31.52423pt too wide) in paragraph at lines 328--330
+Overfull \hbox (31.52423pt too wide) in paragraph at lines 330--332
 \OML/cmm/m/it/10 I[] \OMS/cmsy/m/n/10 ^^Q \OT1/cmr/m/n/10 (0 \OMS/cmsy/m/n/10 ^
 ^T \OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 ^^T j\OML/cmm/m/it/10 ciudades\OMS/cmsy/
 m/n/10 j ^[] \OML/cmm/m/it/10 res \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 ciuda
@@ -673,12 +673,7 @@ L/cmm/m/it/10 k < \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ciudades\OMS/cmsy/m/n/10 j
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 328--330
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 331--332
+Underfull \hbox (badness 10000) in paragraph at lines 330--332
 
  []
 
@@ -688,22 +683,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 333--334
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--341
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--343
+Underfull \hbox (badness 10000) in paragraph at lines 337--343
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
+Underfull \hbox (badness 10000) in paragraph at lines 344--345
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 372--373
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
 
  []
 
@@ -746,7 +746,7 @@ a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/rub
 ia/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C
 :/Users/rubia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols
 /msam10.pfb>
-Output written on "TP- Algo 1.pdf" (9 pages, 618961 bytes).
+Output written on "TP- Algo 1.pdf" (9 pages, 619249 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
