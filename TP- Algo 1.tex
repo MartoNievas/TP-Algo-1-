@@ -15,7 +15,7 @@
 \integrante{Nievas, Martin}{453/24}{tinnivas@gmail.com}
 \integrante{Bercovich, Maximo}{504/24}{maximobercovich@gmail.com}
 \integrante{Monteverde Busso
-	, Nicolás}{360/24
+, Nicolás}{360/24
 	}{nicolasmonteverde123@gmail.com }
 \integrante{Pomsztein, Andy}{624/24}{pomszteinandy@gmail.com}
 \graphicspath{{../static/}}
@@ -100,6 +100,8 @@
 	\pred{esCamino}{ distancias : \matriz{\ent}, c : \TLista{\ent}, d : \ent, h : \ent}{(esMatrizCuadrada(distancias) \land |c| \geq 2) \yLuego  \paraTodo[unalinea]{e}{\ent}{e \in c \implicaLuego 0 \leq e < |distancias| \land (c[0] = d \land c[|c|-1] = h) \land \paraTodo[unalinea]{i}{\ent}{ 0 \leq i < |c|-1 \implicaLuego distancias[c[i]][c[i+1]] > 0 }}} 
 	\vspace{0.2cm}
 	\pred{ciudadesValidas}{ciudades : \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < \longitud{ciudades} \implica ciudades[i].habitantes \geq 0}}
+	\vspace{0.2cm}
+	\pred{ciudadesDistintas}{ ciudades : \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |ciudades| \implicaLuego \neg \existe[unalinea]{j}{\ent}{0 \leq j <|ciudades| \land i \neq j \yLuego ciudades[i].nombre = ciudades[j].nombre} }}
 \end{quote}
 \section{Resolucion de Ejercicios}
 \subsection{Especificacion}
@@ -108,7 +110,7 @@
 	\vspace{0.2cm}
 	\begin{proc}{grandesCiudades}{\In ciudades : \TLista{Ciudad}}{\TLista{Ciudad}}
 		\requiere{ciudadesDistintas(ciudades)\land ciudadesValidas(ciudades)}
-		\asegura{|res| = cantidadCiudadesGrandes(ciudades)  \land sonTodasCiudadesGrandes(res) \land \paraTodo[unalinea]{c}{Ciudad}{c \in res \implicaLuego c \in ciudades}}
+		\asegura{|res| = cantidadCiudadesGrandes(ciudades)  \land sonTodasCiudadesGrandes(res) \land \paraTodo[unalinea]{c}{Ciudad}{c \in res \implicaLuego c \in ciudades} \land ciudadesDistintas(res)}
 	\end{proc}	
 	\pred{sonTodasCiudadesGrandes}{ ciudades : \TLista{Ciudad}}{
 		(\paraTodo[unalinea]{i}{\ent}{0 \leq i < |ciudades| \implicaLuego ciudades[i].habitantes > 50000})   
@@ -120,22 +122,20 @@
 	\textbf{Ejercicio 2:}
 	\begin{proc}{sumaDeHabitantes}{\In menoresDeCiudades : \TLista{Ciudad}, \In mayoresDeCiudad : \TLista{Ciudad}}{\TLista{Ciudad}}
 		\requiere{|menoresDeCiudades| = |mayoresDeCiudades|  \land \\ mismasCiudades(menoresDeCiudades, mayoresDeCiudades \land \\ ciudadesDistintas(menoresDeCiudades) \land ciudadesDistintas(mayoresDeCiudades) \land \\ ciudadesValidas(menoresDeCiudades)\land ciudadesValidas(mayoresDeCiudades))}
-		\asegura{\longitud{res} = \longitud{menoresDeCiudades} \land esLaSuma(res, menoresDeCiudades, mayoresDeCiudades) \land \\ mismasCiudades(res, menoresDeCiudades) \land mismasCiudades(res, mayoresDeCiudades) }
+		\asegura{\longitud{res} = \longitud{menoresDeCiudades} \land esLaSuma(res, menoresDeCiudades, mayoresDeCiudades) \land \\ mismasCiudades(res, menoresDeCiudades) \land mismasCiudades(res, mayoresDeCiudades) \land ciudadesDistintas(res) }
 	\end{proc}
 	\pred{mismasCiudades}{ s: \TLista{Ciudad},  l: \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |s| \implicaLuego \existe[unalinea]{j}{\ent}{0 \leq j < |l| \yLuego s[i].nombre = l[j].nombre}} }
 	\vspace{0.2cm}
 	\pred{esLaSuma}{ res : \TLista{Ciudad},  s: \TLista{Ciudad},  l: \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |res| \implicaLuego \existe[unalinea]{j,k}{\ent}{0 \leq j < |s| \land 0 \leq k < |l| \yLuego s[j].nombre = l[k].nombre \land res[i].habitantes = s[j].habitantes + l[k].habitantes }}}
 	\vspace{0.2cm}
-	\pred{ciudadesDistintas}{ ciudades : \TLista{Ciudad}}{\paraTodo[unalinea]{i}{\ent}{0 \leq i < |ciudades| \implicaLuego \neg \existe[unalinea]{j}{\ent}{0 \leq j <|ciudades| \land i \neq j \yLuego ciudades[i].nombre = ciudades[j].nombre} }}
-	\vspace*{0.2cm}
 	\textbf{Ejercicio 3:}
 	\begin{proc}{hayCamino}{\In distancias : \matriz{\ent}, \In desde : \ent, \In hasta : \ent}{\bool}
-		\requiere{esMatrizCuadrada(distancias) \land diagonalEnCeros(distancias) \land esMatrizSimetrica(distancias) \land distanciasValidas(distancias) \land ( 0 \leq desde < |distancias| \land 0 \leq hasta < |distancias|)}
+		\requiere{esMatrizCuadrada(distancias) \yLuego diagonalEnCeros(distancias) \land esMatrizSimetrica(distancias) \land distanciasValidas(distancias) \land ( 0 \leq desde < |distancias| \land 0 \leq hasta < |distancias|)}
 		\asegura{res = \True \longleftrightarrow \existe[unalinea]{c}{\TLista{\ent}}{esCamino (distancias, c, desde, hasta)}}
 	\end{proc}
 	\textbf{Ejercicio 4:} \\
 	\begin{proc}{cantidadDeCaminosNSaltos}{\Inout conexion : \matriz{\ent}, n : \ent}{}
-		\requiere{conexion = conexion_0 \land esMatrizCuadrada(conexion) \land cerosEnLaDiagonal(conexion) \land esMatrizSimetrica(conexion) \land esMatrizConCerosYUnos(conexion) }	
+		\requiere{conexion = conexion_0 \land esMatrizCuadrada(conexion) \yLuego cerosEnLaDiagonal(conexion) \land esMatrizSimetrica(conexion) \land esMatrizConCerosYUnos(conexion) }	
 		\asegura{\longitud{conexion} = \longitud{conexion_0} \yLuego \paraTodo[unalinea]{i}{\ent}{0 \leq i < \longitud{conexion_0} \implicaLuego \longitud{conexion[i]} = \longitud{conexion_0} \land esMatrizDeOrdenN(conexion,conexion_0,n)}}
 	\end{proc}
 	\vspace{0.2cm}
