@@ -148,7 +148,7 @@
 	\pred{esMatrizDeOrdenN}{s : \matriz{\ent}, l : \matriz{\ent}}{\existe[unalinea]{lista}{\TLista{\matriz{\ent}}}{(\longitud{lista} = n + 1 \land esIdentidad(lista[0]) \land lista[1] = l \land lista[n] = s ) \land \paraTodo[unalinea]{i}{\ent}{1 \leq i \leq n \implicaLuego (esProducto(lista[i],lista[i-1],lista[1]))}}}
 	\textbf{Ejericio 5:} \\
 	\begin{proc}{caminoMinimo}{\In origen : \ent, \In destino : \ent, \In distancias : \matriz{\ent}}{\TLista{\ent}}
-		\requiere{(diagonalEnCeros(distancias) \land esMatrizCuadrada(distancias) \land esMatrizSimetrica(distancias) \land distanciasValidas(distancias) \land (0 \leq origen < \longitud{distancias} \land 0 \leq destino < \longitud{distancias}))}
+		\requiere{(esMatrizCuadrada(distancias) \yLuego diagonalEnCeros(distancias) \land  esMatrizSimetrica(distancias) \land distanciasValidas(distancias) \land (0 \leq origen < \longitud{distancias} \land 0 \leq destino < \longitud{distancias}))}
 		\asegura{(esCamino(res) \yLuego \paraTodo[unalinea]{c}{\TLista{\ent}}{esCamino(c) \implicaLuego distanciaRecorrida(distancias, res) \geq distanciaRecorrida(distancias, c)}) \vee (res = \lvacia) \longleftrightarrow \neg \existe[unalinea]{c}{\TLista{\ent}}{esCamino(distancias, c, origen, destino)}}
 	\end{proc}
 	\aux{distanciaRecorrida}{distancias : \matriz{\ent}, c : \TLista{\ent}}{\ent}{\sum_{i = 0}^{\longitud{c}-2}distancias[c[i]][c[i+1]]}
